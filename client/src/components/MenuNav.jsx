@@ -1,4 +1,6 @@
 import styles from './MenuNav.module.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 export default function MenuNav(){
 
@@ -16,17 +18,19 @@ export default function MenuNav(){
         'Specials'
       ];
       
-
     return (
         <div className={styles.menuNav}>
-            <ul className={styles.menuCategoryCont}>
+            <Swiper style={{padding:'1vh'}}
+                    spaceBetween={10}
+                    slidesPerView={'auto'}
+                    >
                     {
-                        menuCategory.map((item,index)=>{
-                           return <li className={styles.menuCatg} key={index}>{item}</li>
+                        menuCategory.map((item,i)=>{
+                           return  <SwiperSlide key={i} className={styles.menuCatg}>{item}</SwiperSlide>
                         })
                     }
-            </ul>
-            <span className={styles.swipeNotice}>Swipe for more &gt;&gt;</span>
+            </Swiper>
+            <span className={styles.swipeNotice}>&lt;&lt;Swipe for more &gt;&gt;</span>
         </div>
     )
 }
