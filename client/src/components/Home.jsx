@@ -1,9 +1,9 @@
-import styles from './Home.module.css';
+import Menu from './Menu';
 import MenuNav from './MenuNav';
-
 
 export default function Home(){
     return <div>
         <MenuNav/>
+        <Menu/>
     </div>
 }

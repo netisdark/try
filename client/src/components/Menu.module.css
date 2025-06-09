@@ -1,0 +1,24 @@
+.menuContainer{
+    height: 45vh;
+    width: 100vw;
+    background-color: rgb(255, 233, 218);
+    overflow-y: scroll;
+    padding: 1vh 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.categorySection{
+    color: var(--colorPrim);
+}
+.categoryTitle{
+    border-bottom: 1px solid var(--colorPrim);
+    padding-bottom: 1vh;
+}
+.itemList{
+    padding: 1vh 0vh;
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+}
