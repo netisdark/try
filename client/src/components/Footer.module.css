@@ -1,15 +1,19 @@
 .footer{
-    height: 7vh;
+    height: 8vh;
     background-color: var(--colorPrimLight);
     display: grid;
     grid-template-columns: repeat(5,1fr);
     color: var(--colorPrim);
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
 }
 .footItemCont{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1vh 0vh;
 }
 .footIcon{
     font-size: 1.25em;

@@ -4,6 +4,7 @@
     align-items: center;
     padding: 1vh 0vh;
     background-color: var(--colorPrimLight);
+    width: 100vw;
 }
 .menuNav :global(.swiper) {
     width: 100%;
