@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
 
 .menuContainer{
     height: 46vh;
@@ -15,7 +15,8 @@
 .categoryTitle{
     border-bottom: 1px solid var(--colorPrim);
     padding-bottom: 1vh;
-    font-family: "Cedarville Cursive";
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-weight: 300;
 }
 .itemList{
     padding: 1vh 0vh;

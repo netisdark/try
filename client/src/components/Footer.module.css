@@ -1,12 +1,11 @@
 .footer{
     height: 8vh;
+    color: var(--colorPrim);
     background-color: var(--colorPrimLight);
     display: grid;
     grid-template-columns: repeat(5,1fr);
-    color: var(--colorPrim);
     position: absolute;
     width: 100vw;
-    bottom: 0;
 }
 .footItemCont{
     display: flex;
@@ -17,7 +16,6 @@
 }
 .footIcon{
     font-size: 1.25em;
-    color: var(--colorPrim);
 }
 .footItem{
     font-size: .85em;
