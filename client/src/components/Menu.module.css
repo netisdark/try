@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
 .menuContainer{
-    height: 52vh;
+    height: 46vh;
     width: 100vw;
-    background-color: rgb(255, 233, 218);
     overflow-y: scroll;
     padding: 1vh 2vh;
     display: flex;
@@ -14,6 +15,7 @@
 .categoryTitle{
     border-bottom: 1px solid var(--colorPrim);
     padding-bottom: 1vh;
+    font-family: "Cedarville Cursive";
 }
 .itemList{
     padding: 1vh 0vh;
