@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: 1vh 0vh;
+    background-color: var(--colorPrimLight);
 }
 .menuNav :global(.swiper) {
     width: 100%;

@@ -30,7 +30,6 @@ export default function MenuNav(){
                         })
                     }
             </Swiper>
-            <span className={styles.swipeNotice}>&lt;&lt;Swipe for more &gt;&gt;</span>
         </div>
     )
 }
