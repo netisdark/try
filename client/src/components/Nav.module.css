@@ -2,9 +2,18 @@
     width: 100vw;
     height: fit-content;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1vh 0vh;
+    background: whitesmoke;
+    box-shadow: 0px 0px 15px 0px #311000;
+    z-index: 10;
+    position: fixed;
+}
+.spacer{
+    height: 8vh;
+    width: 1005px;
 }
 .searchBox{
     background-color: var(--colorPrim);

@@ -1,0 +1,6 @@
+.cafeBanner{
+    height: 25vh;
+    width: 100vw;
+    background-image: url('../assets/cafeBanner.jpg');
+    background-size: 100% 100%;
+}
