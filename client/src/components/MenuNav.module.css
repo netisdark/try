@@ -1,0 +1,42 @@
+.menuNav{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh 2vh;
+    overflow-x: hidden;
+}
+.menuCategoryCont{
+    display: flex;
+    gap: 2vh;
+    width: fit-content;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    -ms-overflow-style: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding: 1vh;
+}
+.menuCategoryCont::-webkit-scrollbar {
+    height: 8px;
+}
+.menuCategoryCont::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+.menuCatg{
+    width: 100px;
+    flex-shrink: 0;
+    border-radius: 4vh;
+    text-align: center;
+    padding: 1vh 2vh;
+    font-size: .8em;
+    color: var(--colorPrim);
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 7px 0px #3a180149;
+}
+.swipeNotice{
+    color: grey;
+    font-size: .65em;
+    width: 100vw;
+    text-align: center;
+}

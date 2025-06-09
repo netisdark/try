@@ -10,4 +10,9 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'DM Sans';
+  overflow-x: hidden;
+  list-style-type: none;
+  list-style-position: inside;
+  outline: none;
+  border: none;
 }
