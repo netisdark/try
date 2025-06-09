@@ -1,0 +1,20 @@
+.footer{
+    height: 7vh;
+    background-color: var(--colorPrimLight);
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    color: var(--colorPrim);
+}
+.footItemCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footIcon{
+    font-size: 1.25em;
+    color: var(--colorPrim);
+}
+.footItem{
+    font-size: .85em;
+}
