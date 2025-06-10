@@ -1,33 +1,21 @@
-import styles from './MenuNav.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import styles from './MenuNav.module.css'
 
-export default function MenuNav(){
-
-    const menuCategory = [
-        'All',
-        'Coffee',
-        'Tea',
-        'Pastries',
-        'Sandwiches',
-        'Breakfast',
-        'Desserts',
-        'Smoothies',
-        'Specials'
-      ];
-      
+export default function MenuNav({ categories = [], selectedCategory, onSelectCategory }) {
     return (
-        <div className={styles.menuNav}>
-            <Swiper style={{padding:'1vh'}}
-                    spaceBetween={10}
-                    slidesPerView={'auto'}
-                    >
-                    {
-                        menuCategory.map((item,i)=>{
-                           return  <SwiperSlide key={i} className={styles.menuCatg}>{item}</SwiperSlide>
-                        })
-                    }
-            </Swiper>
-        </div>
-    )
-}
+      <nav>
+        {categories.map((cat, index) => {
+          const isActive = (cat === 'All' && selectedCategory === null) || cat === selectedCategory;
+          return (
+            <button
+              className={`${styles.categoryBtn} ${isActive ? styles.active : ''}`}
+              key={index}
+              onClick={() => onSelectCategory(cat)}
+            >
+              {cat}
+            </button>
+          );
+        })}
+      </nav>
+    );
+  }
+  

@@ -1,10 +1,15 @@
 import styles from './Menu.module.css';
 import menuItems from './MenuItems';
 
-export default function Menu() {
+export default function Menu({ selectedCategory }) {
+  const filteredItems = selectedCategory 
+  ? menuItems.filter(category => category.category === selectedCategory)
+  : menuItems;
+
+
   return (
     <div className={styles.menuContainer}>
-      {menuItems.map((category, catIndex) => (
+      {filteredItems.map((category, catIndex) => (
         <div key={catIndex} className={styles.categorySection}>
           <h2 className={styles.categoryTitle}>{category.category}</h2>
           <ul className={styles.itemList}>

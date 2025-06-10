@@ -1,24 +1,26 @@
-.menuNav{
+nav{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1vh 0vh;
-    width: 100vw;
-    height: 8vh;
+    gap: 2vh;
+    overflow-x: auto;
+    padding: 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
-.menuNav :global(.swiper) {
-    width: 100%;
-}
-.menuNav :global(.swiper-slide) {
+.categoryBtn{
+    height: 4.5vh;
     width: 100px;
-    text-align: center;
-    padding: 1vh 0vh;
-    border-radius: 4vh;
-    white-space: nowrap;
-    font-size: .7em;
-    color: #fff;
+    display: inline-block;
+    flex-shrink: 0;
     background-color: var(--colorPrim);
-  }
-  .swipeNotice{
-      font-size: .6em;
-  }
+    color: #fff;
+    border-radius: 5vh;
+}
+.active{
+    border: 2px solid var(--colorPrim);
+    background-color: #fff;
+    color: var(--colorPrim);
+}
+nav::-webkit-scrollbar {
+    display: none;
+}
+  
