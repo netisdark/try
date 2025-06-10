@@ -1,10 +1,8 @@
 import styles from './Menu.module.css';
 import notFoundStyle from './NotFound.module.css'
 import menuItems from './MenuItems';
-import { useNavigate } from 'react-router-dom';
 
 export default function Menu({ selectedCategory, searchTerm }) {
-  const navigate = useNavigate();
 
   const filteredItems = selectedCategory
     ? menuItems.filter(item => item.category === selectedCategory)
