@@ -23,8 +23,8 @@
 }
 .cartQty{
     position: absolute;
-    height: 20px;
-    width: 20px;
+    height: 2.5vh;
+    width: 2.5vh;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -32,6 +32,6 @@
     font-size: .7em;
     background-color: var(--colorPrim);
     color: #fff;
-    bottom: 40px;
-    left: 115px;
+    bottom: 5.5vh;
+    left: 32vw;
 }
