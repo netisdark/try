@@ -1,6 +1,5 @@
 import styles from './Menu.module.css';
 import notFoundStyle from './NotFound.module.css'
-import { Link } from 'react-router-dom';
 import menuItems from './MenuItems';
 import { useNavigate } from 'react-router-dom';
 

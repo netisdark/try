@@ -36,9 +36,6 @@
     justify-content: center;
     align-items: center;
 }
-.searchBtn:active{
-    background-color: rgb(180, 88, 27);
-}
 .inputBox{
     border: none;
     outline: none;
