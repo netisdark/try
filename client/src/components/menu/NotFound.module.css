@@ -31,7 +31,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Fuzzy Bubbles", sans-serif;
 }
 .backBtn:active{
     background: #fff;
