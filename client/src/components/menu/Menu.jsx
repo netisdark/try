@@ -1,29 +1,10 @@
 import styles from './Menu.module.css';
-import notFoundStyle from './NotFound.module.css'
+import notFoundStyle from './NotFound.module.css';
 import menuItems from './MenuItems';
-import { useState } from 'react'; 
+import { useCart } from '../cart/CartContext';  // <-- import the cart context
 
 export default function Menu({ selectedCategory, searchTerm }) {
-  const [itemCounts, setItemCounts] = useState({});
-
-  const handleAddClick = (itemKey) => {
-    setItemCounts(prev => ({ ...prev, [itemKey]: 1 }));
-  };
-
-  const handleIncrement = (itemKey) => {
-    setItemCounts(prev => ({ ...prev, [itemKey]: prev[itemKey] + 1 }));
-  };
-
-  const handleDecrement = (itemKey) => {
-    setItemCounts(prev => {
-      const updatedCount = prev[itemKey] - 1;
-      if (updatedCount <= 0) {
-        const { [itemKey]: _, ...rest } = prev;
-        return rest;
-      }
-      return { ...prev, [itemKey]: updatedCount };
-    });
-  };
+  const { cartItems, addItem, incrementItem, decrementItem } = useCart();
 
   const filteredItems = selectedCategory
     ? menuItems.filter(item => item.category === selectedCategory)
@@ -69,7 +50,7 @@ export default function Menu({ selectedCategory, searchTerm }) {
           <ul className={styles.itemList}>
             {items.map((item, itemIndex) => {
               const itemKey = `${categoryName}-${itemIndex}`;
-              const count = itemCounts[itemKey] || 0;
+              const count = cartItems[itemKey] || 0;
 
               return (
                 <li key={itemKey} className={styles.item}>
@@ -82,15 +63,15 @@ export default function Menu({ selectedCategory, searchTerm }) {
                   {count === 0 ? (
                     <button
                       className={styles.addBtn}
-                      onClick={() => handleAddClick(itemKey)}
+                      onClick={() => addItem(itemKey)}
                     >
                       Add Item
                     </button>
                   ) : (
                     <div className={styles.counter}>
-                      <button onClick={() => handleDecrement(itemKey)} className={styles.counterBtn}>-</button>
+                      <button onClick={() => decrementItem(itemKey)} className={styles.counterBtn}>-</button>
                       <span className={styles.countDisplay}>{count}</span>
-                      <button onClick={() => handleIncrement(itemKey)} className={styles.counterBtn}>+</button>
+                      <button onClick={() => incrementItem(itemKey)} className={styles.counterBtn}>+</button>
                     </div>
                   )}
                 </li>
