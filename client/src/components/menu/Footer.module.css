@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: repeat(5,1fr);
     position: absolute;
+    bottom: 0;
     width: 100vw;
 }
 .footItemCont{
