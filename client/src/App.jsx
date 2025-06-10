@@ -1,23 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Banner from './components/menu/Banner';
-import Footer from './components/footer/Footer';
 
-import Home from './components/menu/Menu';
-import Nav from './components/nav/Nav';
-import MenuNav from './components/menu/MenuNav';
+
+import Footer from './components/footer/Footer';
+import Home from './components/menu/Home';
 import Order from './components/order/Order';
 import Bill from './components/bill/Bill';
 import History from './components/history/History';
 import Account from './components/account/Account';
 
-
-
 export default function App() {
   return (
     <BrowserRouter>
-      <Nav />
-      <Banner />
-      <MenuNav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="order" element={<Order />} />

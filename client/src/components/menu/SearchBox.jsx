@@ -1,7 +1,7 @@
-import styles from './Nav.module.css';
+import styles from './SearchBox.module.css';
 
 
-export default function Nav() {
+export default function SearchBox() {
          return (
             <>
             <nav className={styles.navBar}>
