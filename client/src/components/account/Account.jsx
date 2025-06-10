@@ -18,6 +18,9 @@ export default function Account() {
   return (
     <div className={styles.accountCont}>
       <form>
+          
+      <p className={styles.formTitle}>{isLoginMode ? 'Login' : 'Create Account'}</p>
+
         <input type="text" placeholder="Enter your email" />
         
         {!isLoginMode && (

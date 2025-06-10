@@ -6,7 +6,8 @@
     align-items: center;
 }
 form{
-    height: 50vh;
+    height: fit-content;
+    padding: 5vh 2vh;
     width: 90vw;
     background-color: var(--colorPrimLight);
     border-radius: 4vh;
@@ -16,6 +17,11 @@ form{
     align-items: center;
     gap: 4vh;
     border: 3px solid var(--colorPrim);
+}
+.formTitle{
+    color: var(--colorPrim);
+    font-size: 1.25em;
+    font-weight: 600;
 }
 input{
     height: 5vh;
