@@ -49,6 +49,6 @@
     border-radius: 4vh 0vh 0vh 4vh;
     padding-left: 3vh;
 }
-input::placeholder{
+.inputBox::placeholder{
     color: #fff;
 }
