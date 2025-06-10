@@ -20,8 +20,31 @@
 }
 .itemList{
     padding: 1vh 0vh;
+    row-gap: 2vh;
 }
 .item{
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    place-items: center;
+    height: 8vh;
+    margin-bottom: 2vh;
+}
+.foodImg{
+    height: 8vh;
+    width: 12vh;
+    border-radius: 1vh;
+}
+.foodItem{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+.addBtn{
+    height: 5vh;
+    width: 12vh;
+    background-color: #fff;
+    border-radius: 2vh;
+    border: 2px solid var(--colorPrim);
+    color: var(--colorPrim);
 }

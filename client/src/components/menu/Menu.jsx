@@ -1,5 +1,5 @@
 import styles from './Menu.module.css';
-import menuItems from './MenuItems'; 
+import menuItems from './MenuItems';
 
 export default function Menu() {
   return (
@@ -10,7 +10,12 @@ export default function Menu() {
           <ul className={styles.itemList}>
             {category.items.map((item, itemIndex) => (
               <li key={itemIndex} className={styles.item}>
-                <span>{item.name} </span>  <span>{item.price} RS</span>
+                <img src={item.img} className={styles.foodImg} />
+                <div className={styles.foodItem}>
+                  <span className={styles.foodName}>{item.name}</span>
+                  <span className={styles.foodPrice}>RS {item.price}</span>
+                </div>
+                <button className={styles.addBtn}>Add Item</button>
               </li>
             ))}
           </ul>
