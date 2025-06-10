@@ -30,7 +30,7 @@
     width: auto;
     color: #fff;
     border: none;
-    border-radius: 0vh 4vh 4vh 4vh;
+    border-radius: 0vh 4vh 4vh 0vh;
     cursor: pointer;
     display: flex;
     justify-content: center;
