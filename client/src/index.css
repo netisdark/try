@@ -20,4 +20,6 @@ body{
   list-style-position: inside;
   outline: none;
   border: none;
+  text-decoration: none;
+  color: unset;
 }
