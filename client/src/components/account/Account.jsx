@@ -25,10 +25,10 @@ export default function Account() {
       const result = await response.json();
 
       if (response.ok) {
-        alert('Success');
         setEmail('');
         setName('');
         setPassword('');
+        location.href="/dashboard";
       } else {
         alert(result.message || 'Something went wrong.');
       }

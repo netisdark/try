@@ -1,3 +1,3 @@
 export const account = async (req, res) => {
-    console.log(req.session.user);
+    return res.status(200).json(req.session.user);
 }
