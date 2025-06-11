@@ -27,6 +27,7 @@ export default function Account() {
       if (response.ok) {
         alert('Success');
         setEmail('');
+        setName('');
         setPassword('');
       } else {
         alert(result.message || 'Something went wrong.');

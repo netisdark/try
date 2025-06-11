@@ -21,17 +21,19 @@ export const register = async (req, res) => {
 
     const hash = await bcrypt.hash(password, 10);
 
-    await db.collection('users').insertOne({
+    const result = await db.collection('users').insertOne({
       email,
       name,
       password: hash,
       date: new Date(),
     });
+
     req.session.user = {
-      email: user.email,
-      name: user.name,
-      _id: user._id
+      email,
+      name,
+      _id: result.insertedId
     };
+
 
     return res.status(200).json({ message: 'Account Created Successfully' });
 
