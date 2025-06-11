@@ -7,7 +7,7 @@ export default function Account() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const fetchLink = isLoginMode ? 'http://localhost:5000/api/auth/login' : 'http://localhost:5000/api/auth/register';
+  const fetchLink = isLoginMode ? process.env.LOGIN_ROUTES : process.env.REGISTER_ROUTES;
   const submitCredentials = async () => {
 
     try {
