@@ -7,7 +7,10 @@ export default function Account() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const fetchLink = isLoginMode ? process.env.LOGIN_ROUTES : process.env.REGISTER_ROUTES;
+  const fetchLink = isLoginMode
+    ? import.meta.env.VITE_LOGIN_ROUTES
+    : import.meta.env.VITE_REGISTER_ROUTES;
+
   const submitCredentials = async () => {
 
     try {
