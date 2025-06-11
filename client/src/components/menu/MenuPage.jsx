@@ -20,7 +20,12 @@ export default function MenuPage({ searchTerm, setSearchTerm }) {
         selectedCategory={selectedCategory}
         onSelectCategory={handleSelectCategory}
       />
-      <Menu selectedCategory={selectedCategory} searchTerm={searchTerm} />
+      <Menu
+        selectedCategory={selectedCategory}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+
     </div>
   );
 }

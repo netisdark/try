@@ -1,9 +1,9 @@
 import styles from './Menu.module.css';
 import notFoundStyle from './NotFound.module.css';
 import menuItems from './MenuItems';
-import { useCart } from '../cart/CartContext';  // <-- import the cart context
+import { useCart } from '../cart/CartContext'; 
 
-export default function Menu({ selectedCategory, searchTerm }) {
+export default function Menu({ selectedCategory, searchTerm, setSearchTerm  }) {
   const { cartItems, addItem, incrementItem, decrementItem } = useCart();
 
   const filteredItems = selectedCategory
@@ -27,7 +27,7 @@ export default function Menu({ selectedCategory, searchTerm }) {
         <div className={notFoundStyle.sorryImg}></div>
         <p className={notFoundStyle.notFoundText}>We couldn't find {searchTerm} on our menu...</p>
         <button
-          onClick={() => (window.location.href = '/')}
+          onClick={() => setSearchTerm('')}
           className={notFoundStyle.backBtn}
         >
           &lt;&nbsp;Back to Menu
