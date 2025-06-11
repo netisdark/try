@@ -53,3 +53,13 @@
     border: none;
     color: #fff;
 }
+.counterBtn{
+    background-color: #fff;
+    border: 2px solid var(--colorPrim);
+    padding: 0vh 1vh;
+    border-radius: 1vh;
+    text-align: center;
+}
+.countDisplay{
+    padding: 0vh 2vh;
+}

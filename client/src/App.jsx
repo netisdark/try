@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import { CartProvider } from './components/cart/CartContext';
 
 import Footer from './components/footer/Footer';
 import Home from './components/menu/Home';
@@ -10,15 +10,17 @@ import Account from './components/account/Account';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="order" element={<Order />} />
-        <Route path="bill" element={<Bill />} />
-        <Route path="history" element={<History />} />
-        <Route path="account" element={<Account />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="order" element={<Order />} />
+          <Route path="bill" element={<Bill />} />
+          <Route path="history" element={<History />} />
+          <Route path="account" element={<Account />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
   );
 }

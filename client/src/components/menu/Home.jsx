@@ -1,16 +1,16 @@
-
 import Banner from './Banner';
-import MenuNav from './MenuNav';
-import Menu from './Menu';
+import MenuPage from './MenuPage';
 import SearchBox from './SearchBox';
+import { useState } from 'react';
 
 export default function Home() {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <div>
-      <SearchBox/>
+      <SearchBox onSearch={setSearchTerm} />
       <Banner />
-      <MenuNav />
-      <Menu />
+      <MenuPage searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     </div>
   );
 }

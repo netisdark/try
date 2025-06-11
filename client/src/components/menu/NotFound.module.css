@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
+
+.notFoundCont{
+    height: 48vh;
+    color: var(--colorPrim);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sorryImg{
+    height: 20vh;
+    width: 20vh;
+    background-image: url('../../assets/sorryImg.png');
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 0vh 0vh 10vh 10vh;
+}
+.notFoundText{
+    text-align: center;
+    padding: 3vh;
+    font-size: 1.25em;
+    font-family: "Edu NSW ACT Cursive", cursive;
+}
+.backBtn{
+    padding: 1vh 2vh;
+    background-color: var(--colorPrim);
+    color: #fff;
+    border-radius: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backBtn:active{
+    background: #fff;
+    border: 2px solid var(--colorPrim);
+    color: var(--colorPrim);
+}

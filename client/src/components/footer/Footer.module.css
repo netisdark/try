@@ -21,3 +21,17 @@
 .footItem{
     font-size: .85em;
 }
+.cartQty{
+    position: absolute;
+    height: 2.5vh;
+    width: 2.5vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .7em;
+    background-color: var(--colorPrim);
+    color: #fff;
+    bottom: 5.5vh;
+    left: 32vw;
+}
