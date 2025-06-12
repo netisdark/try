@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
+
 .orderContainer{
     display: flex;
     flex-direction: column;
@@ -11,8 +13,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.35em;
     font-weight: 500;
+    font-family: "Edu NSW ACT Cursive", cursive;
 }
 .cartContainer{
     height: 68vh;
@@ -72,11 +75,31 @@
     color: #fff;
     background-color: var(--colorPrim);
     border-radius: 4vh;
-    font-weight: 600;
     font-size: 1.15em;
 }
 .checkoutBtn:active{
     border: 2px solid var(--colorPrim);
     background-color: #fff;
     color: var(--colorPrim);
+}
+.emptyCartCont{
+    height: 77vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.emptyCartImg{
+    height: 20vh;
+    width: 20vh;
+    background-image: url('../../assets/emptyCartImg.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+}
+.emptyCartText{
+    padding: 4vh 0vh;
+    color: var(--colorPrim);
+    font-weight: 500;
+    font-size: 1.15em;
+    font-family: "Edu NSW ACT Cursive", cursive;
 }

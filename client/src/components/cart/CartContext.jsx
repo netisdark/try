@@ -1,38 +1,61 @@
-import { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
+import menuItems from '../MenuItems';
 
 const CartContext = createContext();
 
-export function CartProvider({ children }) {
+export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
 
-  const addItem = (key) => {
-    setCartItems(prev => ({ ...prev, [key]: 1 }));
+  const addItem = (itemKey) => {
+    setCartItems(prev => ({
+      ...prev,
+      [itemKey]: (prev[itemKey] || 0) + 1
+    }));
   };
 
-  const incrementItem = (key) => {
-    setCartItems(prev => ({ ...prev, [key]: prev[key] + 1 }));
+  const incrementItem = (itemKey) => {
+    setCartItems(prev => ({
+      ...prev,
+      [itemKey]: prev[itemKey] + 1
+    }));
   };
 
-  const decrementItem = (key) => {
+  const decrementItem = (itemKey) => {
     setCartItems(prev => {
-      const updatedCount = prev[key] - 1;
-      if (updatedCount <= 0) {
-        const { [key]: _, ...rest } = prev;
-        return rest;
+      const newCount = prev[itemKey] - 1;
+      if (newCount <= 0) {
+        const newCart = { ...prev };
+        delete newCart[itemKey];
+        return newCart;
       }
-      return { ...prev, [key]: updatedCount };
+      return {
+        ...prev,
+        [itemKey]: newCount
+      };
     });
   };
 
-  const totalQuantity = Object.values(cartItems).reduce((acc, val) => acc + val, 0);
+  const getItemDetails = (itemKey) => {
+    const [category, index] = itemKey.split('-');
+    const categoryObj = menuItems.find(cat => cat.category === category);
+    return categoryObj ? categoryObj.items[parseInt(index)] : null;
+  };
+
+  const totalQuantity = Object.values(cartItems).reduce((sum, count) => sum + count, 0);
 
   return (
-    <CartContext.Provider value={{ cartItems, addItem, incrementItem, decrementItem, totalQuantity }}>
+    <CartContext.Provider value={{
+      cartItems,
+      addItem,
+      incrementItem,
+      decrementItem,
+      getItemDetails,
+      totalQuantity, 
+    }}>
       {children}
     </CartContext.Provider>
   );
-}
 
-export function useCart() {
-  return useContext(CartContext);
-}
+};
+
+export const useCart = () => useContext(CartContext);
