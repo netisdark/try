@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
+
+
+.billWrapper{
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4vh;
+}
+.orderTitle{
+    width: 100vw;
+    background-color: var(--colorPrim);
+    color: #fff;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.35em;
+    font-weight: 500;
+    font-family: "Edu NSW ACT Cursive", cursive;
+}
+.billCont{
+    height: 70vh;
+    width: 90vw;
+    border-radius: 2vh;
+    background-color: var(--colorPrimLight);
+    display: grid;
+    grid-template-rows: 1fr 13fr 1fr;
+    padding: 2vh 3vh;
+    color: var(--colorPrim);
+    font-weight: 550;
+    text-transform: uppercase;
+}
+.billHeader,.bill,.totalCont{
+    height: auto;
+    width: 100%;
+}
+.billHeader{
+    padding-bottom: 1vh;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
+    place-content: center;
+    font-size: .7em;
+    border-bottom: 1px solid var(--colorPrim);
+}
+.billHead{
+    border-right: 1px solid var(--colorPrim);
+    padding-left: 1vh;
+}
+.billHead:last-child{
+    border-right: none;
+}
+.billHead:first-child{
+    padding-left: 0vh;
+}
+.totalCont{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: .8em;
+    border-top: 1px solid var(--colorPrim);
+}
+.bill{
+    padding: 2vh 0vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    overflow-y: scroll;
+}
+.billItem{
+    display: grid;
+    grid-template-columns: 3.5fr 1fr 1fr;
+    font-size: .7em;
+    border-bottom: 1px dashed rgb(247, 189, 151);
+    padding-bottom: 1vh;
+}
+.billItem:last-child{
+    border-bottom: none;
+}
+.itemQty,.itemPrice{
+    text-align: center;
+}
+.noOrderCont{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.noOrderImg{
+    height: 20vh;
+    width: 16vh;
+    background-image: url('../../assets/noOrderImg.png');
+    background-position: center;
+    background-size: 100% 100%;
+}
+.noOrderText{
+    padding: 4vh 0vh;
+    color: var(--colorPrim);
+    font-weight: 500;
+    font-size: 1.15em;
+    font-family: "Edu NSW ACT Cursive", cursive;
+}

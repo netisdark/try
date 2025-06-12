@@ -1,7 +1,15 @@
 import styles from './Order.module.css';
 import { useCart } from '../cart/CartContext';
 
+
 export default function Order() {
+  const { setOrderPlaced } = useCart();
+
+  const handlePlaceOrder = () => {
+    setOrderPlaced(true);
+  };
+
+
   const { cartItems, incrementItem, decrementItem, getItemDetails } = useCart();
 
   const cartEntries = Object.entries(cartItems);
@@ -46,7 +54,7 @@ export default function Order() {
       {cartEntries.length > 0 && (
         <div className={styles.confirmCont}>
           <div className={styles.priceCont}>Total : RS {total}</div>
-          <button className={styles.checkoutBtn}>Place Order</button>
+          <button onClick={handlePlaceOrder} className={styles.checkoutBtn}>Place Order</button>
         </div>
       )}
     </div>

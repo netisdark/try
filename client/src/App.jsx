@@ -9,6 +9,7 @@ import History from './components/history/History';
 import Account from './components/account/Account';
 import Dashboard from './components/dashboard/dashboard';
 
+
 export default function App() {
   return (
     <CartProvider>
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="history" element={<History />} />
           <Route path="account" element={<Account />} />
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/bill" element={<Bill />} />
         </Routes>
         <Footer />
       </BrowserRouter>
