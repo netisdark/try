@@ -29,6 +29,7 @@
     grid-template-columns: 2fr 3fr 2fr;
     border-bottom: 1px solid #f3cbb4;
     padding: 2vh 0vh;
+    gap: 2vh;
 }
 .cartItemImg{
     height: 8vh;
@@ -40,7 +41,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     color: var(--colorPrim);
+    font-size: .85em;
+}
+.cartItemName{
+    text-align: center;
+    font-weight: 500;
 }
 .cartBtnCont{
     display: flex;
