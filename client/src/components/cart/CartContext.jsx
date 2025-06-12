@@ -6,24 +6,29 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [lastPlacedItems, setLastPlacedItems] = useState({});
 
   const addItem = (itemKey) => {
+    setCartItems(prev => {
+      const currentCount = prev[itemKey] || 0;
+      return {
+        ...prev,
+        [itemKey]: currentCount + 1
+      };
+    });
+  };
+
+  const incrementItem = (itemKey) => {
     setCartItems(prev => ({
       ...prev,
       [itemKey]: (prev[itemKey] || 0) + 1
     }));
   };
 
-  const incrementItem = (itemKey) => {
-    setCartItems(prev => ({
-      ...prev,
-      [itemKey]: prev[itemKey] + 1
-    }));
-  };
-
   const decrementItem = (itemKey) => {
     setCartItems(prev => {
-      const newCount = prev[itemKey] - 1;
+      const currentCount = prev[itemKey] || 0;
+      const newCount = currentCount - 1;
       if (newCount <= 0) {
         const newCart = { ...prev };
         delete newCart[itemKey];
@@ -44,21 +49,29 @@ export const CartProvider = ({ children }) => {
 
   const totalQuantity = Object.values(cartItems).reduce((sum, count) => sum + count, 0);
 
+  const placeOrder = () => {
+    setOrderPlaced(true);
+    setLastPlacedItems({ ...cartItems });
+  };
+
   return (
-    <CartContext.Provider value={{
-      cartItems,
-      addItem,
-      incrementItem,
-      decrementItem,
-      getItemDetails,
-      totalQuantity,
-      orderPlaced,
-      setOrderPlaced,
-    }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addItem,
+        incrementItem,
+        decrementItem,
+        getItemDetails,
+        totalQuantity,
+        orderPlaced,
+        setOrderPlaced,
+        placeOrder,
+        lastPlacedItems,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
-
 };
 
 export const useCart = () => useContext(CartContext);
