@@ -1,6 +1,6 @@
 import styles from './Menu.module.css';
 import notFoundStyle from './NotFound.module.css';
-import menuItems from './MenuItems';
+import menuItems from '../MenuItems';
 import { useCart } from '../cart/CartContext'; 
 
 export default function Menu({ selectedCategory, searchTerm, setSearchTerm  }) {

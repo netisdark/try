@@ -1,6 +1,6 @@
 import MenuNav from './MenuNav';
 import Menu from './Menu';
-import menuItems from './MenuItems';
+import menuItems from '../MenuItems';
 import React, { useState } from 'react';
 
 export default function MenuPage({ searchTerm, setSearchTerm }) {
