@@ -4,16 +4,16 @@ import styles from './Nav.module.css';
 
 export default function Nav(){
     return (
-    <nav className={styles.navCont}>
+    <div className={styles.navCont}>
         <div className={styles.navBar}>
             <div className={styles.navLogo}>Cafeto Italio</div>
             <div className={styles.navItemscont}>
-                <div className={styles.navItem}>Menu</div>
-                <div className={styles.navItem}>About</div>
-                <div className={styles.navItem}>Contact</div>
+                <NavLink className={styles.navItem}>Menu</NavLink>
+                <NavLink className={styles.navItem}>About</NavLink>
+                <NavLink className={styles.navItem}>Contact</NavLink>
             </div>
         </div>
         <div className={styles.spacer}></div>
-    </nav>
+    </div>
     )
 }

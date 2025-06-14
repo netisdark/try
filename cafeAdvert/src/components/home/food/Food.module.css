@@ -1,0 +1,47 @@
+.foodCont{
+    height: 88vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.foodTitle,.foodDesc{
+    text-align: center;
+    padding: 2vh 0vh;
+}
+.foodTitle{
+    font-size: 2em;
+    font-weight: 500;
+}
+.gridContBottom,.gridContTop{
+    display: grid;
+    gap: 2vh;
+    padding: 2vh;
+    width: 70%;
+}
+.gridContTop{
+    grid-template-columns: 3fr 2fr;
+}
+.gridContBottom{
+    padding-top: 0vh;
+    grid-template-columns: 2fr 3fr;
+}
+.foodGrid1,.foodGrid2,.foodGrid3,.foodGrid4{
+    height: 32vh;
+    width: auto;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 2vh;
+}
+.foodGrid1{
+    background-image: url('https://ekat8wd2es5.exactdn.com/wp-content/uploads/2024/05/Opera-season-small-plates-at-the-London-Coliseum-Header-800x400.jpg?strip=all&lossy=1&quality=90&webp=90&ssl=1');
+}
+.foodGrid2{
+    background-image: url('https://media.istockphoto.com/id/1150368715/photo/duck-leg-confit.jpg?s=612x612&w=0&k=20&c=7Q2w6FbQpJWkZqGRDF6jeTQrYc_V3IiUcRAc4nSFNZs=');
+}
+.foodGrid3{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJpOdoOSoYXqAOuHyCE7ucma7xp1qlEYtr1g&s');
+}
+.foodGrid4{
+    background-image: url('https://tb-static.uber.com/prod/image-proc/processed_images/22c6f4f2614380bbf6f17406c200ac01/9b3aae4cf90f897799a5ed357d60e09d.jpeg');
+}
