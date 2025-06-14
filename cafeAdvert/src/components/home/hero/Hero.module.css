@@ -1,0 +1,49 @@
+.hero{
+    height: 88vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+.heroLeft,.heroRight{
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--titleFont);
+    gap: 5vh;
+}
+.heroTitle{
+    font-size: 2.5em;
+    width: 80%;
+    text-align: center;
+}
+.heroDesc{
+    width: 60%;
+    text-align: center;
+}
+.heroBtn{
+    width: 20vh;
+    height: 6vh;
+    font-family: var(--titleFont);
+    color: #fff;
+    border-radius: 3vh;
+    background-color: var(--colorPrim);
+    font-size: .75em;
+    font-weight: 600;
+}
+.heroBtn:hover{
+    background-color: #fff;
+    color: var(--colorPrim);
+    border: 2px solid var(--colorPrim);
+    cursor: pointer;
+    transition: .25s ease;
+}
+.cafeImg{
+    height: 65vh;
+    width: 65vh;
+    background-position: center;
+    background-size: 100% 100%;
+    background-image: url('../../../assets/heroImg.png');
+}
