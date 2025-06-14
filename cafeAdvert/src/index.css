@@ -22,3 +22,21 @@
   font-family: "Julius Sans One", sans-serif;
   overflow-x: hidden;
 }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}

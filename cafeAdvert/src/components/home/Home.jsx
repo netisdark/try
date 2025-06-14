@@ -1,11 +1,11 @@
-import styles from './Home.module.css';
-
-import Hero from './hero/hero';
+import Hero from './hero/Hero';
 import Food from './food/Food';
+import Reviews from './reviews/Reviews';
 
-export default function Home(){
+export default function home(){
     return <>
         <Hero/>
         <Food/>
+        <Reviews/>
     </>
 }
