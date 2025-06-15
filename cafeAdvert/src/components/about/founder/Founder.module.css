@@ -1,9 +1,9 @@
 .founderWrapper{
     margin-top: 10vh;
     padding: 5vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 .founderTitle{
@@ -45,9 +45,47 @@
     background-image: url('https://media.istockphoto.com/id/1459178010/photo/fashion-industry-black-woman-and-designer-portrait-of-clothing-tailor-with-business-vision.jpg?s=612x612&w=0&k=20&c=XmGyalprlJMrpEPuduBA-YTrcbEXl8p0PFgTxWi0vvU=');
 }
 .founderDesc{
-    width: 80%;
+    width: 70vh;
     text-align: justify;
     padding: 4vh 2vh;
     font-size: .8em;
     font-family: var(--descFont);
+}
+@media(max-width:1015px){
+    .founder{
+        height: 40vh;
+        width: 50vh;
+    }
+    .founderDesc{
+        width: 50vh;
+    }
+}
+@media(max-width:768px){
+    .foundersCont{
+        display: flex;
+        flex-direction: column;
+    }
+    .founder{
+        width: 70vh;
+        height: 50vh;
+    }
+    .founderDesc{
+        width: 70vh;
+    }
+}
+@media(max-width:475px){
+    .foundersCont{
+        gap: 0vh;
+    }
+    .founder{
+        width: 48vh;
+        height: 35vh;
+    }
+    .founderDesc{
+        width: 48vh;
+    }
+    .founderTitle{
+        font-size: 1.5em;
+        padding: 0;
+    }
 }

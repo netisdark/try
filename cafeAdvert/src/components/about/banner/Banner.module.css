@@ -15,13 +15,7 @@
     box-shadow: 0px 0px 5px 0px #d4d4d4;
     background-image: url('https://img.freepik.com/premium-photo/red-room-with-white-wall-white-framed-picture_379823-47475.jpg?ga=GA1.1.1985019836.1749953281&semt=ais_hybrid&w=740');
 }
-.bannerTitle{
-    font-size: 2em;
-    font-weight: 600;
-    text-align: center;
-    padding-bottom: 1vh;
-    color: var(--colorPrim);
-}
+
 .bannerDescCont{
     display: flex;
     gap: 5vh;
@@ -29,8 +23,54 @@
     justify-content: center;
     align-items: center;
 }
+.bannerTitle{
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 1vh;
+    color: var(--colorPrim);
+}
 .bannerDesc{
     font-size: .8em;
     width: 90%;
     text-align: justify;
+}
+
+
+
+@media(max-width:891px){
+    .bannerCont{
+        display: flex;
+        flex-direction: column;
+        padding: 5vh 10vh;
+        justify-content: center;
+    }
+    .bannerDescCont{
+        gap: 2vh;
+    }
+}
+@media(max-width:650px){
+    .bannerCont{
+        justify-content: center;
+        align-items: center;
+        height: 88vh;
+    }
+}
+@media(max-width:495px){
+    .bannerCont{
+        justify-content: center;
+        align-items: center;
+    }
+    .banner{
+        width: 95vw;
+        height: 60vh;
+        border-radius: 2vh;
+    }
+    .bannerTitle{
+        font-size: 1em;
+    }
+    .bannerDesc{
+        width: 80vw;
+        font-size: .75em;
+    }
 }
