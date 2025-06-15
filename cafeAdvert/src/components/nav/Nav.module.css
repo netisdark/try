@@ -36,3 +36,29 @@
 .active{
     color: var(--colorPrim);
 }
+
+
+@media(max-width: 768px){
+    .navLogo{
+        font-size: 1.5em;
+    }
+    .navItemscont{
+        gap: 1vh;
+        font-size: 1em;
+    }
+}
+@media(max-width: 576px){
+    .navLogo{
+        font-size: 1em;
+    }
+    .navItemscont{
+        font-size: .7em;
+    }
+    .navBar{
+        padding: 0vh 3vh;
+        height: 10vh;
+    }
+    .spacer{
+        height: 10vh;
+    }
+}
