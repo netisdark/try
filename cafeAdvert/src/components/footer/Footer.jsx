@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className={styles.nameDesc}>&copy;All rights reserved</div>
             </div>
             <div className={styles.footItemsCont}>
-                <div className={styles.itemTitle}>Quick NavLinknks</div>
+                <div className={styles.itemTitle}>Quick Links</div>
                 <ul className={styles.footItems}>
                     <NavLink to='/menu' className={styles.footItem}>Menu</NavLink>
                     <NavLink to='/about' className={styles.footItem}>About</NavLink>
@@ -22,7 +22,7 @@ export default function Footer() {
                 <ul className={styles.footItems}>
                     <li className={styles.footItem}>+977 9812345678</li>
                     <li className={styles.footItem}>cafe@gmail.com</li>
-                    <li className={styles.footItem}>Kathmandu - Bouddha</li>
+                    <li className={styles.footItem}>Kathmandu</li>
                 </ul>
             </div>
         </footer>

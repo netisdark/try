@@ -40,3 +40,43 @@ footer{
 .footItem{
     cursor: pointer;
 }
+
+
+@media(max-width:914px){
+    .cafeName{
+        font-size: 1.6em;
+    }
+    .itemTitle{
+        font-size: 1.15em;
+    }
+    .footItem{
+        font-size: .8em;
+    }
+}
+@media(max-width:775px){
+    footer{
+        margin-top: 10vh;
+        gap: 0vh;
+        height: fit-content;
+    }
+    .footItemsCont{
+        padding: 2vh 0vh;
+    }
+}
+@media(max-width:595px){
+    .cafeName{
+        font-size: .8em;
+    }
+    .itemTitle{
+        font-size: .6em;
+    }
+    .footItem{
+        font-size: .5em;
+    }
+    .footItems{
+        padding: 2vh 0vh;
+    }
+    .nameDesc{
+        font-size: .5em;
+    }
+}
