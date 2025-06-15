@@ -40,3 +40,17 @@ textarea{
     cursor: pointer;
     transition: .25s ease;
 }
+@media(max-width:400px){
+    .queryTitle{
+        font-size: 1.5em;
+    }
+    input,textarea{
+        width: 90vw;
+    }
+    textarea{
+        font-size: .9em;
+    }
+    .sendBtn{
+        width: 20vh;
+    }
+}
