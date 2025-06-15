@@ -50,3 +50,45 @@
     background-size: 100% 100%;
     background-image: url('../../../assets/heroImg.png');
 }
+
+
+@media(max-width:1110px){
+    .heroTitle{
+        width: 100%;
+        padding: 0vh 2vh;
+    }
+    .cafeImg{
+        height: 55vh;
+        width: 55vh;
+    }
+}
+@media(max-width:920px){
+    .heroTitle{
+        font-size: 1.75em;
+    }
+    .heroDesc{
+        width: 90%;
+    }
+    .cafeImg{
+        height: 45vh;
+        width: 45vh;
+    }
+}
+@media(max-width:768px){
+    .hero{
+        grid-template-columns: none;
+        grid-template-rows: 3fr 2fr;
+    }
+    .heroTitle{
+        font-size: 1.5em
+    }
+    .heroDesc{
+        font-size: .8em;
+    }
+    .cafeImg{
+        margin-top: 3vh;
+    }
+    .heroRight{
+        gap: 3vh;
+    }
+}

@@ -7,17 +7,21 @@
 }
 .foodTitle,.foodDesc{
     text-align: center;
-    padding: 2vh 0vh;
+    padding: 2vh;
+    overflow: hidden;
 }
 .foodTitle{
     font-size: 2em;
     font-weight: 500;
+    color: var(--colorPrim);
+    font-weight: 600;
 }
 .gridContBottom,.gridContTop{
     display: grid;
     gap: 2vh;
     padding: 2vh;
     width: 70%;
+    overflow: hidden;
 }
 .gridContTop{
     grid-template-columns: 3fr 2fr;
@@ -44,4 +48,23 @@
 }
 .foodGrid4{
     background-image: url('https://tb-static.uber.com/prod/image-proc/processed_images/22c6f4f2614380bbf6f17406c200ac01/9b3aae4cf90f897799a5ed357d60e09d.jpeg');
+}
+
+
+
+@media(max-width:768px){
+    .gridContBottom,.gridContTop{
+        width: 90%;
+    }
+    .foodGrid1,.foodGrid2,.foodGrid3,.foodGrid4{
+        height: 26vh;
+    }
+}
+@media(max-width:576px){
+    .gridContBottom,.gridContTop{
+        width: 100%;
+    }
+    .foodGrid1,.foodGrid2,.foodGrid3,.foodGrid4{
+        height: 22vh;
+    }
 }
