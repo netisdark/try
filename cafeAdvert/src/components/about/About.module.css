@@ -1,0 +1,41 @@
+.bannerCont{
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+}
+.banner{
+    height: 60vh;
+    width: 80%;
+    border-radius: 4vh ;
+    background-position: center;
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 5px 0px #d4d4d4;
+    background-image: url('https://img.freepik.com/premium-photo/red-room-with-white-wall-white-framed-picture_379823-47475.jpg?ga=GA1.1.1985019836.1749953281&semt=ais_hybrid&w=740');
+}
+.bannerDescCont{
+    padding: 2vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+    padding: 4vh;
+    background-color: var(--colorPrim);
+    color: #fff;
+    position: relative;
+    bottom: 10vh;
+    border-radius: 0vh 4vh 0vh 4vh;
+    z-index: 1;
+}
+.bannerTitle{
+    font-size: 2.5em;
+}
+.bannerDesc{
+    font-size: .8em;
+    width: 70%;
+    text-align: justify;
+}
