@@ -1,0 +1,38 @@
+.storyWrapper{
+    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 4vh;
+}
+.storyCont{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titleCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorPrim);
+    font-weight: 600;
+}
+.storyTitle{
+    font-size: 2em;
+}
+.storyImg{
+    height: 60vh;
+    width: 80vh;
+    border-radius: 2vh;
+    background-position: center;
+    background-size: 100% 100%;
+    background-image: url('https://imgs.search.brave.com/dEDHu6wyyZq-r6rVFCRf_kpsBi5LZTitpVw0lpYYTKk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI1/NTU4MDQwNy9waG90/by93YXZpbmctb2xk/LWJ1c2luZXNzbWFu/LXNtaWxpbmctbG9v/a2luZy1hdC10aGUt/Y2FtZXJhLXZpZGVv/LWNhbGwtd2ViLWNh/bWVyYS1nYWRnZXQt/c2l0dGluZy1pbi5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/c3VESDg3SHBmdm5Y/cjJMUldYMGtTU3VK/WGg2bDBjczhWQzZs/d0k3YVotbz0');
+}
+.storyDesc{
+    width: 70%;
+    font-size: .8em;
+    padding: 2vh;
+    text-align: justify;
+}
