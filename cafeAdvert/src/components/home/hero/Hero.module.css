@@ -32,6 +32,9 @@
     background-color: var(--colorPrim);
     font-size: .75em;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .heroBtn:hover{
     background-color: #fff;
