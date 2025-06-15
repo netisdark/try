@@ -17,6 +17,7 @@
 }
 .bannerTitle{
     font-size: 2em;
+    font-weight: 600;
     text-align: center;
     padding-bottom: 1vh;
     color: var(--colorPrim);
