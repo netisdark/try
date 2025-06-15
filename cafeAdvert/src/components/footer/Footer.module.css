@@ -6,7 +6,7 @@ footer{
     padding: 2vh;
     gap: 2vh;
     color: #fff;
-    background-image: linear-gradient(to right,#ff997a,#ff4d17,#ff4d17);
+    background-image: linear-gradient(to right,#ff997a,#e43326,#e43326);
 }
 .footItemsCont{
     width: auto;
@@ -33,6 +33,8 @@ footer{
     padding: 6vh 0vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2vh;
 }
 .footItem{
