@@ -1,0 +1,42 @@
+.contactBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+    height: 88vh;
+}
+.queryTitle{
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--colorPrim);
+}
+input,textarea{
+    border: 1px solid rgb(212, 212, 212);
+    font-family: var(--descFont);
+    padding: 1vh 2vh;
+    width: 50vh;
+}
+textarea{
+    height: 20vh;
+}
+.sendBtn{
+    width: 25vh;
+    height: 6vh;
+    font-family: var(--titleFont);
+    color: #fff;
+    border-radius: 3vh;
+    background-color: var(--colorPrim);
+    font-size: .75em;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sendBtn:hover{
+    background-color: #fff;
+    color: var(--colorPrim);
+    border: 2px solid var(--colorPrim);
+    cursor: pointer;
+    transition: .25s ease;
+}
