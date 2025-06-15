@@ -9,8 +9,7 @@ export default function About(){
             <div className={styles.bannerDescCont}>
                 <span className={styles.bannerTitle}>Why Cafe Italio Was Built</span>
                 <p className={styles.bannerDesc}>
-                Cafe Italio was established with the vision of offering a refined culinary experience in an inviting and intimate setting. Designed to blend the sophistication of fine dining with the warmth of a cozy atmosphere, the café provides guests with a thoughtfully curated menu, exceptional service, and a space where quality and comfort come together seamlessly.
-                </p>
+                Cafe Italio was founded to offer a refined dining experience in a cozy, welcoming setting, combining quality cuisine, exceptional service, and a warm atmosphere.                </p>
             </div>
         </div>
     )
