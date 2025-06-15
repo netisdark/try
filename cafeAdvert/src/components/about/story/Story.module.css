@@ -35,4 +35,5 @@
     font-size: .8em;
     padding: 2vh;
     text-align: justify;
+    font-family: var(--descFont);
 }
