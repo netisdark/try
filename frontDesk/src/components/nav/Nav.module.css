@@ -1,8 +1,4 @@
-.navLink:nth-child(1){
-    background-color: var(--colorPrim);
-    color: #fff;
-    border-radius: 1vh;
-}
+
 .navCont{
     height: 100%;
     width: 20vw;
@@ -37,8 +33,7 @@
     justify-content: center;
     align-items: center;
     font-size: .9em;
-    color: var(--colorPrim);
-    color: #686868;
+    color: #414141;
     width: 80%;
     padding: 0vh 2vh;
 }
@@ -50,4 +45,9 @@
 .navItem{
     margin-left: 2vh;
     width: 20vh;
+}
+.active{
+    background-color: var(--colorPrim);
+    color: #fff;
+    border-radius: 1vh;
 }
