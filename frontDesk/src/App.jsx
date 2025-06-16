@@ -12,7 +12,8 @@ export default function App() {
       padding: '2vh',
       gap: '2vh',
       height: '100vh',
-      display: 'flex'
+      display: 'flex',
+      backgroundColor : '#eeeeee'
       }}>
     <BrowserRouter>
     <Nav/>
