@@ -1,59 +1,53 @@
+.navLink:nth-child(1){
+    background-color: var(--colorPrim);
+    color: #fff;
+    border-radius: 1vh;
+}
 .navCont{
     height: 100%;
     width: 20vw;
-    display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
-    background-color: var(--colorPrim);
-    border-radius: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 1vh;
 }
-.cafeNameCont,.navLinksCont,.logoutCont{
-    height: auto;
-    width: 100%;
+.cafeName{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--colorPrim);
+    font-family: "Julius Sans One", sans-serif;
+}
+.navLinksCont{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 02vh;
-}
-.cafeName{
-    font-size: 1.5em;
-    font-weight: 600;
-    border-radius: 4vh;
-    color: var(--colorPrim);
-    color: #fff;
-    font-family: "Julius Sans One", sans-serif;
+    height: 60vh;
+    width: 90%;
+    gap: 2vh;
 }
 .navLink{
-    width: 80%;
+    height: 6vh;
     display: flex;
-    gap: 4vh;
-    border: 2px solid #fff;
-    background-color: var(--colorPrim);
-    color: #fff;
-    border-radius: 2vh;
-    padding: 2vh 4vh;
-}
-.navItem{
+    justify-content: center;
+    align-items: center;
     font-size: .9em;
-    width: 8vh;
-}
-.logoutBtn{
-    padding: 2vh 4vh;
-    background-color: #fff;
     color: var(--colorPrim);
-    border-radius: 4vh;
-    cursor: pointer;
-}
-.logout{
-    margin-left: 2vh;
-}
-.logoutBtn:hover{
-    transform: scale(1.05,1.05);
-    transition: .25s ease;
+    color: #686868;
+    width: 80%;
+    padding: 0vh 2vh;
 }
 .navLink:hover{
-    background-color: #fff;
-    color: var(--colorPrim);
-    transition: .15s ease;
-    cursor: pointer;
+    background-color: var(--colorPrim);
+    color: #fff;
+    border-radius: 1vh;
+}
+.navItem{
+    margin-left: 2vh;
+    width: 20vh;
 }

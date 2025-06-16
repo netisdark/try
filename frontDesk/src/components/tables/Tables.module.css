@@ -1,7 +1,66 @@
-.tableCont{
+.tableWrapper{
+    background-color: #fff;
+    border-radius: 1vh;
     height: 100%;
     width: 80vw;
-    background-color: #fff;
-    border-radius: 2vh;
-    padding: 2vh;
+}
+.pageTitle{
+    height: 12vh;
+    background-color: var(--colorPrim);
+    border-radius: 1vh 1vh 0vh 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5em;
+}
+.tableCont{
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 1fr;
+}
+.tableCol1,.tableCol2,.tableCol3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 84vh;
+    width: auto;
+    color: #c5c5c5;
+}
+.tableCol1{
+    gap: 6vh;
+}
+.tbCol1{
+    width: fit-content;
+    font-size: 5em;
+}
+.cashierTable{
+    color: #c5c5c5;
+}
+.cashierCont{
+    padding: 4vh 0vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 5em;
+    color: rgb(73, 73, 73);
+}
+.tableCol2{
+    gap: 10vh;
+}
+.tbCol2{
+    font-size: 5em;
+    transform: rotate(90deg);
+}
+.tableCol3{
+    gap: 8vh;
+}
+.tbCol3{
+    font-size: 3em;
+}
+.active{
+    color: #67ce5e;
 }
