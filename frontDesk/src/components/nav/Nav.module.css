@@ -1,0 +1,53 @@
+.navCont{
+    height: 100%;
+    border-radius: 2vh;
+    width: 20vw;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    background-color: #ffdfdf;
+}
+.cafeNameCont,.navLinksCont,.logoutCont{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+.cafeName{
+    font-size: 1.5em;
+    font-weight: 600;
+    border-radius: 4vh;
+    color: var(--colorPrim);
+    font-family: "Julius Sans One", sans-serif;
+}
+.navLink{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--colorPrim);
+    color: #fff;
+    padding: 2vh 4vh;
+    border-radius: 2vh;
+}
+.navItem{
+    font-size: .9em;
+    width: 8vh;
+}
+.logoutBtn{
+    padding: 2vh 4vh;
+    background-color: var(--colorPrim);
+    color: #fff;
+    border-radius: 4vh;
+}
+.logout{
+    margin-left: 2vh;
+}
+.navLink:hover,.logoutBtn:hover{
+    border: 2px solid var(--colorPrim);
+    background-color: #ffefef;
+    color: var(--colorPrim);
+    transition: .15s ease;
+    cursor: pointer;
+}
