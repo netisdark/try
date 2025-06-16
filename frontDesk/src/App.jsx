@@ -7,8 +7,8 @@ import Tables from './components/tables/Tables';
 export default function App() {
   return (
     <div style={{
-      padding: '1vh',
-      gap: '1vh',
+      padding: '2vh',
+      gap: '2vh',
       height: '100vh',
       display: 'flex'
       }}>
