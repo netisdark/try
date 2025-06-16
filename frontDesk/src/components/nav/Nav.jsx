@@ -11,10 +11,10 @@ export default function Nav(){
         </div>
 
         <div className={styles.navLinksCont}>
-            <NavLink className={styles.navLink}><i class="fa-solid fa-couch"></i><span className={styles.navItem}>Tables</span></NavLink>
-            <NavLink className={styles.navLink}><i class="fa-solid fa-list-ul"></i><span className={styles.navItem}>Orders</span></NavLink>
-            <NavLink className={styles.navLink}><i class="fa-solid fa-money-check-dollar"></i><span className={styles.navItem}>Bills</span></NavLink>
-            <NavLink className={styles.navLink}><i class="fa-solid fa-file-lines"></i><span className={styles.navItem}>Menu</span></NavLink>
+            <NavLink to='/' className={styles.navLink}><i class="fa-solid fa-couch"></i><span className={styles.navItem}>Tables</span></NavLink>
+            <NavLink to='/orders' className={styles.navLink}><i class="fa-solid fa-list-ul"></i><span className={styles.navItem}>Orders</span></NavLink>
+            <NavLink to='/bill' className={styles.navLink}><i class="fa-solid fa-money-check-dollar"></i><span className={styles.navItem}>Bills</span></NavLink>
+            <NavLink to='/menu' className={styles.navLink}><i class="fa-solid fa-file-lines"></i><span className={styles.navItem}>Menu</span></NavLink>
         </div>
 
         <div className={styles.logoutCont}>

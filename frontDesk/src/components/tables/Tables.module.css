@@ -1,3 +1,7 @@
 .tableCont{
     width: 80vw;
+    border: 2px solid var(--colorPrim);
+    box-shadow: var(--boxShadow);
+    padding: 2vh;
+    border-radius: 2vh;
 }
