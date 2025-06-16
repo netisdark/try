@@ -35,7 +35,6 @@ app.get(/^\/(?!api|server).*/, (req, res) => {
 });
 
 app.use('/api', router);
-app.use('/server', account);
 
 const startServer = async () => {
   await connectToMongoDB();
