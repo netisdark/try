@@ -8,7 +8,7 @@ import Bill from './components/bill/Bill';
 import History from './components/history/History';
 import Account from './components/account/Account';
 import Dashboard from './components/dashboard/dashboard';
-
+import getOrder from './components/bill/billadmin';
 
 export default function App() {
   return (
@@ -22,6 +22,7 @@ export default function App() {
           <Route path="account" element={<Account />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="/bill" element={<Bill />} />
+          <Route path="admin/orders" element={<getOrder />} />
         </Routes>
         <Footer />
       </BrowserRouter>

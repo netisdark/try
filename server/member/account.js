@@ -75,3 +75,8 @@ export const login = async (req, res) => {
     return res.status(500).json({ message: 'Server Error' });
   }
 };
+
+
+export const account = async (req, res) => {
+    return res.status(200).json(req.session.user);
+}
