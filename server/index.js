@@ -9,7 +9,6 @@ import { fileURLToPath } from 'url';
 import bodyParser from 'body-parser';
 import { connectToMongoDB } from './config/db.js';
 import router from './routes/routes.js';
-import account from './account/account.js';
 
 const app = express();
 app.use(cors());
