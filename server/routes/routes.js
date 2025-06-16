@@ -10,7 +10,7 @@ router.post('/auth/register', register);
 router.get('/account', account);
 
 // admin routes
-router.post('/admin/postOrder', postOrder);
-router.get('/admin/getOrder', getOrder);
+router.post('/postOrder', postOrder);
+router.get('/getOrder', getOrder);
 
 export default router;
