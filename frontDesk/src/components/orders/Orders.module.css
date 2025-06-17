@@ -3,12 +3,13 @@
     width: 100%;
     padding: 2vh;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(auto,1fr);
     gap: 5vh;
+    overflow-y: auto;
 }
 .orderCard{
-    height: 45vh;
+    height: 40vh;
     width: auto;
     border: 1px solid #dfdfdf;
     border-radius: 1vh;

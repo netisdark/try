@@ -11,25 +11,10 @@ const orders = [
     timeStamp: '1 min ago',
     items: [
       { name: 'Keema Noodles', qty: 2 },
-      { name: 'Masala Chai', qty: 1 },
+      { name: 'Strawberry Ice-cream', qty: 1 },
+      {name: 'Blueberry Muffin', qty : 2}
     ],
-  },
-  {
-    tableNum: 2,
-    timeStamp: '3 min ago',
-    items: [
-      { name: 'Chicken Momo', qty: 3 },
-      { name: 'Cold Coffee', qty: 2 },
-    ],
-  },
-  {
-    tableNum: 3,
-    timeStamp: '5 min ago',
-    items: [
-      { name: 'Veg Pizza', qty: 1 },
-      { name: 'Lemonade', qty: 2 },
-    ],
-  },
+  }
 ];
 
 export default function Orders() {

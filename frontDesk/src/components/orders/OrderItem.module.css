@@ -1,12 +1,12 @@
 .itemsCont{
     display: flex;
     flex-direction: column;
-    height: 26vh;
+    height: 22vh;
     gap: 1vh;
     overflow-y: auto;
 }
 .item{
     display: flex;
     justify-content: space-between;
-    padding: 0vh 2vh;
+    padding: 0vh 3vh 0vh 2vh;
 }
