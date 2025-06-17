@@ -1,24 +1,49 @@
+import { useState } from 'react';
 import styles from './Orders.module.css';
 
 import Body from '../body';
 import Title from '../Title';
 import Switch from './OrderSwitch';
 import OrderItem from './OrderItem';
-
-const orders = [
-  {
-    tableNum: 1,
-    timeStamp: '1 min ago',
-    items: [
-      { name: 'Keema Noodles', qty: 2 },
-      { name: 'Strawberry Ice-cream', qty: 1 },
-      {name: 'Blueberry Muffin', qty : 2},
-      
-    ],
-  }
-];
+import ConfirmBox from './ConfirmBox';
 
 export default function Orders() {
+  const [orders, setOrders] = useState([
+    {
+      tableNum: 1,
+      timeStamp: '1 min ago',
+      items: [
+        { name: 'Keema Noodles', qty: 2 },
+        { name: 'Strawberry Ice-cream', qty: 1 },
+        { name: 'Blueberry Muffin', qty: 2 },
+      ],
+    },
+    {
+      tableNum: 2,
+      timeStamp: 'Just now',
+      items: [
+        { name: 'Coffee', qty: 1 },
+        { name: 'Croissant', qty: 2 },
+      ],
+    },
+  ]);
+
+  const [confirmingIndex, setConfirmingIndex] = useState(null);
+
+  const handleCancelClick = (index) => {
+    setConfirmingIndex(index);
+  };
+
+  const handleConfirm = (index) => {
+    const newOrders = orders.filter((_, i) => i !== index);
+    setOrders(newOrders);
+    setConfirmingIndex(null);
+  };
+
+  const handleCancelConfirm = () => {
+    setConfirmingIndex(null);
+  };
+
   return (
     <Body>
       <Title>Orders</Title>
@@ -29,16 +54,38 @@ export default function Orders() {
               <span className={styles.tableNum}>Table : {order.tableNum}</span>
               <span className={styles.timeStamp}>{order.timeStamp}</span>
             </div>
+
             <div className={styles.itemsWrap}>
               <div className={styles.itemTitle}>
                 <span className={styles.itemHead}>Item</span>
                 <span className={styles.itemHead}>QTY</span>
               </div>
-              <OrderItem items={order.items} />
+
+              {confirmingIndex === index ? (
+                <ConfirmBox
+                  onConfirm={() => handleConfirm(index)}
+                  onCancel={handleCancelConfirm}
+                />
+              ) : (
+                <OrderItem items={order.items} />
+              )}
             </div>
+
             <div className={styles.statusCont}>
-              <Switch />
-              <button className={styles.checkOutBtn}>Checkout</button>
+              <Switch disabled={confirmingIndex !== null} />
+              <button
+                className={styles.cancelOrderBtn}
+                onClick={() => handleCancelClick(index)}
+                disabled={confirmingIndex !== null}
+              >
+                Cancel
+              </button>
+              <button
+                className={styles.checkOutBtn}
+                disabled={confirmingIndex !== null}
+              >
+                Checkout
+              </button>
             </div>
           </div>
         ))}

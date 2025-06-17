@@ -48,8 +48,9 @@
     align-items: center;
     padding: 1vh 2vh;
 }
-.checkOutBtn{
-    padding: 1vh 2vh;
+.checkOutBtn,.cancelOrderBtn{
+    height: 4vh;
+    width: 10vh;
     font-size: .8em;
     border-radius: 1vh;
     border: 1px solid #00bb09;
@@ -57,6 +58,15 @@
     background-color: #fff;
     cursor: pointer;
     font-weight: 500;
+}
+.cancelOrderBtn{
+    border: 1px solid var(--colorPrim);
+    color: var(--colorPrim);
+}
+.cancelOrderBtn:hover{
+    background-color: var(--colorPrim);
+    color: #fff;
+    transition: .2s ease;
 }
 .checkOutBtn:hover{
     background-color: #00bb09;
