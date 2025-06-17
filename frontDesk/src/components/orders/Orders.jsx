@@ -17,15 +17,7 @@ export default function Orders() {
         { name: 'Strawberry Ice-cream', qty: 1 },
         { name: 'Blueberry Muffin', qty: 2 },
       ],
-    },
-    {
-      tableNum: 2,
-      timeStamp: 'Just now',
-      items: [
-        { name: 'Coffee', qty: 1 },
-        { name: 'Croissant', qty: 2 },
-      ],
-    },
+    }
   ]);
 
   const [confirmingIndex, setConfirmingIndex] = useState(null);
