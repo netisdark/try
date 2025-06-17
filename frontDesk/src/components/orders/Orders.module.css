@@ -1,0 +1,46 @@
+.orderWrap{
+    height: 90vh;
+    width: 100%;
+    padding: 2vh;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto,1fr);
+    gap: 5vh;
+}
+.orderCard{
+    height: 45vh;
+    width: auto;
+    border: 1px solid #dfdfdf;
+    border-radius: 1vh;
+    font-size: .8em;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+.orderTitle{
+    padding-bottom: 1vh;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00bb09;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 1vh 1vh 0vh 0vh;
+    padding: 2vh;
+}
+.itemsWrap{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    color: #7a7a7a;
+}
+.itemTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 2vh;
+    border-bottom: 1px dashed #c9c9c9;
+}
+.statusCont{
+    padding: 1vh 2vh;
+}

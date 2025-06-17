@@ -1,23 +1,4 @@
-.tableWrapper{
-    background-color: #fff;
-    border-radius: 1vh;
-    height: 100%;
-    width: 80vw;
-}
-.titleCont{
-    height: 6vh;
-    display: flex;
-    justify-content: center;
-}
-.title{
-    background-color: var(--colorPrim);
-    color: #fff;
-    padding: 2vh 6vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0vh 0vh 1vh 1vh;
-}
+
 .tableMap{
     height: 90vh;
     width: 100%;
