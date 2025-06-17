@@ -12,7 +12,8 @@ const orders = [
     items: [
       { name: 'Keema Noodles', qty: 2 },
       { name: 'Strawberry Ice-cream', qty: 1 },
-      {name: 'Blueberry Muffin', qty : 2}
+      {name: 'Blueberry Muffin', qty : 2},
+      
     ],
   }
 ];
@@ -37,6 +38,7 @@ export default function Orders() {
             </div>
             <div className={styles.statusCont}>
               <Switch />
+              <button className={styles.checkOutBtn}>Checkout</button>
             </div>
           </div>
         ))}
