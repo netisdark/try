@@ -1,0 +1,19 @@
+.billWrap{
+    height: 90vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(auto,1fr);
+    overflow-y: auto;
+    gap: 5vh;
+    padding: 2vh;
+}
+.billCard{
+    height: 42vh;
+    width: auto;
+    border: 1px solid #dfdfdf;
+    border-radius: 1vh;
+    font-size: .8em;
+    display: flex;
+    flex-direction: column;
+}

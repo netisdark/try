@@ -72,12 +72,6 @@ export default function Orders() {
               >
                 Cancel
               </button>
-              <button
-                className={styles.checkOutBtn}
-                disabled={confirmingIndex !== null}
-              >
-                Checkout
-              </button>
             </div>
           </div>
         ))}

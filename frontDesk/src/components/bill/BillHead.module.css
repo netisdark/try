@@ -1,0 +1,26 @@
+
+.billHead{
+    display: flex;
+    flex-direction: column;
+}
+.tableNum{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00bb09;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 1vh 1vh 0vh 0vh;
+   height: 6vh;
+}
+.billInfoCont{
+    color: #424242;
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr;
+    border-bottom: 1px solid #d6d6d6;
+    font-size: .85em;
+    padding: 1vh;
+    gap: 1vh;
+    margin: 0vh 2vh;
+}

@@ -1,0 +1,43 @@
+.summaryCont{
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vh 2vh;
+    font-size: .85em;
+    font-weight: 500;
+}
+select{
+    width: 15vh;
+    padding: 1vh 2vh;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #00bb09;
+    color: #fff;
+}
+.totalPrice{
+    display: flex;
+    align-items: center;
+}
+.total{
+    padding: 1vh;
+    color: #00bb09;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+.confirmBtn{
+    border-radius: 1vh;
+    padding: 0vh 2vh;
+    height: 5vh;
+    background-color: #fff;
+    color: #00bb09;
+    border: 1px solid #00bb09;
+    cursor: pointer;
+    font-size: .95em;
+    font-weight: 500;
+}
+.confirmBtn:hover{
+    background-color: #00bb09;
+    color: #fff;
+    transition: .2s ease;
+}
