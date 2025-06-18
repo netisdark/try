@@ -3,7 +3,7 @@ import styles from './Orders.module.css';
 
 import Body from '../body';
 import Title from '../Title';
-import Switch from './OrderSwitch';
+import Switch from '../OrderSwitch';
 import OrderItem from './OrderItem';
 import ConfirmBox from './ConfirmBox';
 

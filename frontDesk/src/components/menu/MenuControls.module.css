@@ -1,0 +1,44 @@
+.menuControls{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 4vh;
+}
+.searchBox{
+    background-color: var(--colorPrim);
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 1vh;
+    height: 100%;
+    border-radius: 4vh;
+    width: 60vh;
+    color: #fff;
+}
+.searchBtn{
+    background-color: rgb(207, 2, 2);
+    color: #fff;
+    border-radius: 0vh 4vh 4vh 0vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputBox{
+    background-color: var(--colorPrim);
+    border-radius: 4vh 0vh 0vh 4vh;
+    padding-left: 3vh;
+}
+.inputBox::placeholder{
+    color: #fff;
+}
+.addItemBtn{
+    background-color: var(--colorPrim);
+    color: #fff;
+    padding: 2vh 4vh;
+    cursor: pointer;
+    border-radius: 1vh;
+}
+i{
+    margin-right: 2vh;
+}
