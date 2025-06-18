@@ -1,0 +1,22 @@
+.paymentItemCont{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.paymentBox{
+    height: 6vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 1fr;
+    border: 1px solid var(--colorPrim);
+    border-top: none;
+}
+.paymentItem{
+    border-right: 1px solid var(--colorPrim);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5a5a5a;
+    font-weight: 500;
+    color: var(--colorPrim);
+}

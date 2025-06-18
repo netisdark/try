@@ -1,0 +1,7 @@
+.paymentsWrap{
+    height: 90vh;
+    width: 100%;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+}

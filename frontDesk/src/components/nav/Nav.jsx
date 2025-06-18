@@ -48,7 +48,7 @@ export default function Nav() {
                 </NavLink>
 
                 <NavLink
-                    to='/payment'
+                    to='/payments'
                     className={({ isActive }) =>
                         isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                     }
