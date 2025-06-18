@@ -7,7 +7,7 @@
 .paymentBox{
     height: 6vh;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 1fr 1fr;
     border: 1px solid var(--colorPrim);
     border-top: none;
 }

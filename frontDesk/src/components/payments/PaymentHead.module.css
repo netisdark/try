@@ -2,7 +2,7 @@
     font-size: .85em;
     height: 7vh;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 1fr 1fr;
     background-color: #fff0f0;
     color: var(--colorPrim);
     border: 1px solid var(--colorPrim);

@@ -2,16 +2,41 @@ import styles from './PaymentItem.module.css';
 
 
 export default function PaymentItem() {
+
+    const paymentData = [
+        {
+            paymentDate: '2025/5/12',
+            paymentTime : '12 : 06',
+            tableNum: 7,
+            paymentMethod: 'Bank Transfer',
+            itemQty: 4,
+            totalPrice: '720'
+        },
+        {
+            paymentDate: '2025/5/12',
+            paymentTime : '12 : 08',
+            tableNum: 5,
+            paymentMethod: 'Esewa',
+            itemQty: 2,
+            totalPrice: '900'
+        }
+    ]
+
     return (
         <div className={styles.paymentItemCont}>
-            <div className={styles.paymentBox}>
-                <div className={styles.paymentItem}>1</div>
-                <div className={styles.paymentItem}>2025/5/12/ 12 : 06</div>
-                <div className={styles.paymentItem}>7</div>
-                <div className={styles.paymentItem}>Bank Transfer</div>
-                <div className={styles.paymentItem}>4</div>
-                <div className={styles.paymentItem}>720</div>
-            </div>
+            {
+                paymentData.map((payment, index) => {
+                   return (<div className={styles.paymentBox} key={index}>
+                        <div className={styles.paymentItem}>{index + 1}</div>
+                        <div className={styles.paymentItem}>{payment.paymentDate}</div>
+                        <div className={styles.paymentItem}>{payment.paymentTime}</div>
+                        <div className={styles.paymentItem}>{payment.tableNum}</div>
+                        <div className={styles.paymentItem}>{payment.paymentMethod}</div>
+                        <div className={styles.paymentItem}>{payment.itemQty}</div>
+                        <div className={styles.paymentItem}>{payment.totalPrice}</div>
+                    </div>)
+                })
+            }
         </div>
     )
 }
