@@ -2,7 +2,6 @@ import { useState } from 'react';
 import styles from './Bill.module.css';
 
 import Body from '../body';
-import Title from '../Title';
 import BillHead from './BillHead';
 import BillItems from './BillItems';
 import ConfirmBtn from './Summary';
@@ -13,8 +12,6 @@ export default function Bill() {
 
   return (
     <Body>
-      <Title>Bill</Title>
-
       <div className={styles.billWrap}>
         <div className={styles.billCard}>
           <BillHead />

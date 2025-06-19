@@ -7,8 +7,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #00bb09;
-    color: #fff;
+    color: var(--colorPrim);
+    border-bottom: 1px solid var(--borderColor);
     font-weight: 600;
     border-radius: 1vh 1vh 0vh 0vh;
    height: 6vh;
@@ -18,7 +18,7 @@
     font-weight: 500;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 1fr;
-    border-bottom: 1px solid #d6d6d6;
+    border-bottom: 1px solid var(--borderColor);
     font-size: .85em;
     padding: 1vh;
     gap: 1vh;

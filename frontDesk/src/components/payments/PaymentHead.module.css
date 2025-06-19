@@ -3,14 +3,12 @@
     height: 7vh;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr 2fr 1fr 1fr;
-    background-color: #fff0f0;
+    background-color: var(--colorPrimLight);
     color: var(--colorPrim);
-    border: 1px solid var(--colorPrim);
 }
 .headItem{
     font-weight: 500;
     height: 100%;
-    border-right: 1px solid var(--colorPrim);
     display: flex;
     justify-content: center;
     align-items: center;

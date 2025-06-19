@@ -32,8 +32,8 @@ export default function PaymentItem() {
                         <div className={styles.paymentItem}>{payment.paymentTime}</div>
                         <div className={styles.paymentItem}>{payment.tableNum}</div>
                         <div className={styles.paymentItem}>{payment.paymentMethod}</div>
-                        <div className={styles.paymentItem}>{payment.itemQty}</div>
                         <div className={styles.paymentItem}>{payment.totalPrice}</div>
+                        <div className={styles.paymentItem}><button className={styles.invoiceBtn}>View <i class="fa-solid fa-file-invoice-dollar"></i></button></div>
                     </div>)
                 })
             }

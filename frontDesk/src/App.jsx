@@ -10,8 +10,6 @@ import Payments from './components/payments/Payments';
 export default function App() {
   return (
     <div style={{
-      padding: '2vh',
-      gap: '2vh',
       height: '100vh',
       display: 'flex',
       backgroundColor : '#eeeeee'

@@ -8,15 +8,24 @@
     height: 6vh;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr 2fr 1fr 1fr;
-    border: 1px solid var(--colorPrim);
     border-top: none;
 }
 .paymentItem{
-    border-right: 1px solid var(--colorPrim);
     display: flex;
     justify-content: center;
     align-items: center;
     color: #5a5a5a;
     font-weight: 500;
     color: var(--colorPrim);
+    font-size: .8em;
+}
+.paymentBox:nth-child(even){
+    background-color: var(--colorPrimLight);
+}
+.invoiceBtn{
+    cursor: pointer;
+    margin-left: 2vh;
+    padding: 1vh 2vh;
+    border-radius: 1vh;
+    background-color: unset;
 }

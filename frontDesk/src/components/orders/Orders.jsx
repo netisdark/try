@@ -2,7 +2,6 @@ import { useState } from 'react';
 import styles from './Orders.module.css';
 
 import Body from '../body';
-import Title from '../Title';
 import Switch from '../OrderSwitch';
 import OrderItem from './OrderItem';
 import ConfirmBox from './ConfirmBox';
@@ -38,7 +37,6 @@ export default function Orders() {
 
   return (
     <Body>
-      <Title>Orders</Title>
       <div className={styles.orderWrap}>
         {orders.map((order, index) => (
           <div key={index} className={styles.orderCard}>

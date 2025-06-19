@@ -1,5 +1,5 @@
 .menuWrap{
-    height: 88vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 .itemHead{
     width: 100%;
     height: 10vh;
-    background-color: #ffebeb;
+    background-color: var(--colorPrimLight);
     display: grid;
     grid-template-columns: 1fr 3fr 3fr 3fr 1fr 2fr 1fr;
     border-radius: 1vh 1vh 0vh 0vh;

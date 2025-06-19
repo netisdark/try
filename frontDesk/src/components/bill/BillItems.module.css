@@ -15,7 +15,7 @@
     grid-template-columns: 1fr 5fr 1fr 1fr;
     padding: 1vh;
     gap: 1vh;
-    border-bottom: 1px dashed #b9b9b9;
+    border-bottom: 1px dashed var(--borderColor);
 }
 .billItem:nth-child(3),
 .billItem:nth-child(4){

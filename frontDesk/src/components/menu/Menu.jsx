@@ -1,7 +1,6 @@
 import styles from './Menu.module.css';
 
 import Body from '../body';
-import Title from '../Title';
 import MenuControls from './MenuControls';
 import MenuItems from './MenItems';
 
@@ -9,7 +8,6 @@ import MenuItems from './MenItems';
 export default function Menu(){
     return (
         <Body>
-            <Title>Menu</Title>
                 <MenuControls/>
             <div className={styles.menuWrap}>
                 <div className={styles.itemHead}>

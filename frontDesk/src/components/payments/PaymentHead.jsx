@@ -9,8 +9,8 @@ export default function PaymentHead(){
             <div className={styles.headItem}>Time</div>
             <div className={styles.headItem}>Table No</div>
             <div className={styles.headItem}>Payment Method</div>
-            <div className={styles.headItem}>QTY</div>
             <div className={styles.headItem}>Total Amount</div>
+            <div className={styles.headItem}>Invoice</div>
         </div>
     )
 }

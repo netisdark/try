@@ -1,5 +1,4 @@
 import Body from '../body';
-import Title from '../Title';
 import styles from './Tables.module.css';
 
 const tablesConfig = {
@@ -14,8 +13,6 @@ export default function Tables() {
 
   return (
     <Body>
-      <Title>Tables</Title>
-
       <div className={styles.tableMap}>
         {Object.entries(tablesConfig).map(([colKey, tableCount], colIndex) => (
           <div key={colKey} className={styles[colKey]}>

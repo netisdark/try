@@ -21,7 +21,12 @@ export default function MenuItems() {
                             <div className={styles.itemDetl}>{categoryData.category}</div>
                             <div className={styles.itemDetl}>{item.price}</div>
                             <div className={styles.itemDetl}><OrderSwitch /></div>
-                            <div className={styles.itemDetl}><i class="fa-solid fa-pen-to-square"></i></div>
+                            <div className={styles.itemDetl}>
+                                <div className={styles.editBtnCont}>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </div>
                         </div>
                     );
                 })

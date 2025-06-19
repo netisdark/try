@@ -1,6 +1,8 @@
 .menuItemsCont{
     height: fit-content;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .menuItem{
     display: grid;
@@ -21,4 +23,11 @@
     align-items: center;
     font-size: .8em;
     font-weight: 500;
+}
+.editBtnCont{
+    display: flex;
+    gap: 2vh;
+}
+i{
+    cursor: pointer;
 }

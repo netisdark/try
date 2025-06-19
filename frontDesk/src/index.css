@@ -3,6 +3,8 @@
 
 :root{
   --colorPrim : #e43326;
+  --colorPrimLight : #ffebeb;
+  --borderColor : #dbdbdb;
 }
 *{
   padding: 0;

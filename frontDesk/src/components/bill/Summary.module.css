@@ -8,22 +8,13 @@
     font-weight: 500;
 }
 select{
-    width: 15vh;
-    padding: 1vh 2vh;
+    width: 10vh;
+    padding: 1vh;
     border-radius: 5px;
     font-size: 1em;
-    background-color: #00bb09;
-    color: #fff;
-}
-.totalPrice{
-    display: flex;
-    align-items: center;
-}
-.total{
-    padding: 1vh;
-    color: #00bb09;
-    font-weight: 600;
-    font-size: 1.25em;
+    color: rgb(59, 59, 59);
+    background-color: #fff;
+    border-radius: 0px;
 }
 .confirmBtn{
     border-radius: 1vh;
