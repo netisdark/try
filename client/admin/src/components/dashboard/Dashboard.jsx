@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Dashboard.module.css';
 import Body from '../body';
 import DashboardLeft from './dsbLeft/DashboardLeft';
+import DashboardRight from './dsbRight/DashboardRight';
 
 export default function Dashboard() {
 
@@ -19,6 +20,7 @@ export default function Dashboard() {
         <Body>
             <div className={styles.dashboardWrap}>
                 <DashboardLeft/>
+                <DashboardRight/>
             </div>
         </Body>
     );

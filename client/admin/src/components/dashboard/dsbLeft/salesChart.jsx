@@ -1,5 +1,4 @@
 import styles from './SalesChart.module.css';
-
 import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
@@ -10,12 +9,10 @@ import {
   TimeScale,
   Tooltip,
   Legend,
+  Filler,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
-import { subDays } from 'date-fns';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 ChartJS.register(
   LineElement,
@@ -24,82 +21,55 @@ ChartJS.register(
   PointElement,
   TimeScale,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
-const generateFakeSales = (date) => {
-    const sales = [];
-    for (let i = 0; i < 24; i++) {
-      sales.push({
-        time: new Date(date.setHours(i, 0, 0, 0)),
-        sales: Math.floor(Math.random() * 100),
-      });
-    }
-    return sales;
-  };
+// Function to generate fake hourly sales between 8 AM and 10 PM
+const generateSalesData = (date) => {
+  const sales = [];
+  for (let hour = 8; hour <= 22; hour++) {
+    const time = new Date(date);
+    time.setHours(hour, 0, 0, 0);
+    sales.push({
+      time,
+      sales: Math.floor(Math.random() * 100),
+    });
+  }
+  return sales;
+};
 
 const SalesChart = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [timeRange, setTimeRange] = useState('today');
   const [salesData, setSalesData] = useState([]);
 
   useEffect(() => {
-    let data = [];
-
-    switch (timeRange) {
-      case 'week':
-        for (let i = 0; i < 7; i++) {
-          const day = subDays(new Date(), i);
-          data = [...data, ...generateFakeSales(new Date(day))];
-        }
-        break;
-      case 'month':
-        for (let i = 0; i < 30; i++) {
-          const day = subDays(new Date(), i);
-          data = [...data, ...generateFakeSales(new Date(day))];
-        }
-        break;
-      case 'year':
-        for (let i = 0; i < 12; i++) {
-          const monthStart = new Date(new Date().getFullYear(), new Date().getMonth() - i, 1);
-          data = [...data, ...generateFakeSales(new Date(monthStart))];
-        }
-        break;
-      case 'lifetime':
-        for (let i = 0; i < 60; i++) {
-          const day = subDays(new Date(), i);
-          data = [...data, ...generateFakeSales(new Date(day))];
-        }
-        break;
-      default:
-        data = generateFakeSales(new Date(selectedDate));
-    }
-
+    const today = new Date();
+    const data = generateSalesData(today);
     setSalesData(data);
-  }, [selectedDate, timeRange]);
+  }, []);
 
   const chartData = {
-    labels: salesData.map((s) => s.time),
+    labels: salesData.map((d) => d.time),
     datasets: [
       {
         label: 'Sales',
-        data: salesData.map((s) => s.sales),
-        borderColor: 'rgba(34, 197, 94, 1)',
-        backgroundColor: 'rgba(34, 197, 94, 0.2)',
+        data: salesData.map((d) => d.sales),
+        borderColor: '#10B981', // green
+        backgroundColor: 'rgba(16, 185, 129, 0.1)', // translucent fill
         fill: true,
-        tension: 0.4,
-        pointRadius: 3,
-        pointHoverRadius: 6,
+        tension: 0.4, // smooth lines
+        pointRadius: 4,
+        pointBackgroundColor: '#10B981',
       },
     ],
   };
-  
 
   const options = {
     responsive: true,
     plugins: {
       legend: {
         display: true,
+        position: 'top',
       },
     },
     scales: {
@@ -111,11 +81,11 @@ const SalesChart = () => {
         min: new Date(new Date().setHours(8, 0, 0, 0)),
         max: new Date(new Date().setHours(22, 0, 0, 0)),
         ticks: {
-          callback: function (value) {
-            const hour24 = new Date(value).getHours();
-            let hour12 = hour24 % 12;
-            if (hour12 === 0) hour12 = 12;
-            return hour12.toString();
+          callback: (value) => {
+            const hour = new Date(value).getHours();
+            let displayHour = hour % 12;
+            if (displayHour === 0) displayHour = 12;
+            return displayHour.toString();
           },
         },
         title: {
@@ -128,34 +98,16 @@ const SalesChart = () => {
           display: true,
           text: 'Sales',
         },
+        beginAtZero: true,
       },
     },
   };
 
   return (
-    <div className={styles.chartContainer}>
-      <div className={styles.filtersContainer}>
-        <DatePicker
-          selected={selectedDate}
-          onChange={(date) => {
-            setSelectedDate(date);
-            setTimeRange('today');
-          }}
-          className={styles.datePicker}
-        />
-        <select
-          className={styles.selectFilter}
-          onChange={(e) => setTimeRange(e.target.value)}
-          value={timeRange}
-        >
-          <option value="today">Today</option>
-          <option value="week">This Week</option>
-          <option value="month">This Month</option>
-          <option value="year">This Year</option>
-          <option value="lifetime">Lifetime</option>
-        </select>
+    <div className={styles.salesChartContainer}>
+      <div className={styles.chartWrapper}>
+      <Line data={chartData} options={options} className={styles.chartCanvas}/>
       </div>
-      <Line className={styles.chart} data={chartData} options={options} />
     </div>
   );
 };

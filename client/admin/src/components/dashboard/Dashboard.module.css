@@ -5,10 +5,5 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 2vh;
-}
-.dashboardLeft,.dashboardRight{
-    height: 100%;
-    width: auto;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
 }
