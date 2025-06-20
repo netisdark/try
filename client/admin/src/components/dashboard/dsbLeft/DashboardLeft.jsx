@@ -43,11 +43,11 @@ export default function DashboardLeft() {
                         <span className={styles.overviewItem}>234</span>
                     </div>
                     <div className={styles.overviewBox}>
-                        <span className={styles.overviewTitle}>Revenue</span>
-                        <span className={styles.overviewItem}>RS. 35100</span>
+                        <span className={styles.overviewTitle}>Peak Hour</span>
+                        <span className={styles.overviewItem}>5 PM</span>
                     </div>
                     <div className={styles.overviewBox}>
-                        <span className={styles.overviewTitle}>Profit</span>
+                        <span className={styles.overviewTitle}>Revenue</span>
                         <span className={styles.overviewItem}>RS. 25100</span>
                     </div>
                 </div>
