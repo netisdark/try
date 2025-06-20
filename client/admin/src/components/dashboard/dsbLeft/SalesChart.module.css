@@ -8,5 +8,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 74vh;
+}
+.chartTitle{
+    font-weight: 500;
+    width: 100%;
+    padding: 4.6vh 0vh;
 }

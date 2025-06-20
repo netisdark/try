@@ -105,6 +105,7 @@ const SalesChart = () => {
 
   return (
     <div className={styles.salesChartContainer}>
+      <div className={styles.chartTitle}>Sales Chart</div>
       <div className={styles.chartWrapper}>
       <Line data={chartData} options={options} className={styles.chartCanvas}/>
       </div>
