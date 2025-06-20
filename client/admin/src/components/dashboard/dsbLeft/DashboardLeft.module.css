@@ -1,0 +1,32 @@
+.greet{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 15vh;
+}
+.summaryCont{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.overViewBoxCont{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border: 1px solid var(--borderColor);
+    padding: 2vh 0vh;
+}
+.overviewBox{
+    height: 14vh;
+    width: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+.overviewItem{
+    color: #00c400;
+    font-size: 1.25em;
+    font-weight: 600;
+}
