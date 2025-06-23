@@ -29,9 +29,25 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 5000;
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
-app.get(/^\/(?!api|server).*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+app.use('/', express.static(path.join(__dirname, '../client/customer/dist')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/customer/dist/index.html'));
+});
+
+app.use('/admin', express.static(path.join(__dirname, '../client/admin/dist')));
+app.get('/admin/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/admin/dist/index.html'));
+});
+
+
+app.use('/frontdesk', express.static(path.join(__dirname, '../client/frontDesk/dist')));
+app.get('/frontdesk/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/frontDesk/dist/index.html'));
+});
+
+app.use('/advert', express.static(path.join(__dirname, '../client/cafeAdvert/dist')));
+app.get('/advert/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/cafeAdvert/dist/index.html'));
 });
 
 app.use('/api', router);

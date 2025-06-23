@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import Nav from './components/nav/Nav';
 import Tables from './components/tables/Tables';
@@ -9,6 +9,7 @@ import Payments from './components/payments/Payments';
 
 export default function FrontdeskApp() {
   return (
+  <BrowserRouter>
     <div style={{
       height: '100vh',
       display: 'flex',
@@ -23,5 +24,6 @@ export default function FrontdeskApp() {
         <Route path="/payments" element={<Payments/>} />
       </Routes>
     </div>
+  </BrowserRouter>
   )
 }

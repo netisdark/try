@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './components/cart/CartContext';
 import Footer from './components/footer/Footer';
 import Home from './components/menu/Home';
@@ -11,6 +11,7 @@ import GetOrder from './components/order/order.admin';
 import './index.css';
 export default function App() {
   return (
+  <BrowserRouter>
     <CartProvider>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,5 +25,6 @@ export default function App() {
         </Routes>
         <Footer />
     </CartProvider>
+  </BrowserRouter>
   );
 }

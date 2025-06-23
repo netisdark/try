@@ -8,8 +8,8 @@ export default function Account() {
   const [password, setPassword] = useState('');
 
   const fetchLink = isLoginMode
-    ? import.meta.env.VITE_LOGIN_ROUTES
-    : import.meta.env.VITE_REGISTER_ROUTES;
+    ? 'api/auth/login'
+    : 'api/auth/register';
 
   const submitCredentials = async () => {
 
