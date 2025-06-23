@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { CartProvider } from './components/cart/CartContext';
-
 import Footer from './components/footer/Footer';
 import Home from './components/menu/Home';
 import Order from './components/order/Order';
@@ -9,11 +8,10 @@ import History from './components/history/History';
 import Account from './components/account/Account';
 import Dashboard from './components/dashboard/dashboard';
 import GetOrder from './components/order/order.admin';
-
+import './index.css';
 export default function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="order" element={<Order />} />
@@ -25,7 +23,6 @@ export default function App() {
           <Route path="admin/orders" element={<GetOrder />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
     </CartProvider>
   );
 }

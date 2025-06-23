@@ -1,0 +1,14 @@
+{
+  "name": "cafe-management",
+  "private": true,
+  "workspaces": [
+    "client/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.0"
+  }
+}
