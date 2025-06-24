@@ -1,6 +1,6 @@
 import styles from './Payments.module.css';
 
-import Body from '../body';
+import Body from '../Body';
 import PaymentHead from './PaymentHead';
 import PaymentItem from './PaymentItem';
 

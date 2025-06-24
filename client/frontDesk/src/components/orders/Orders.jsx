@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Orders.module.css';
 
-import Body from '../body';
+import Body from '../Body';
 import Switch from '../OrderSwitch';
 import OrderItem from './OrderItem';
 import ConfirmBox from './ConfirmBox';

@@ -1,8 +1,8 @@
 import styles from './Menu.module.css';
 
-import Body from '../body';
+import Body from '../Body';
 import MenuControls from './MenuControls';
-import MenuItems from './MenItems';
+import MenuItems from './MenuItems';
 
 
 export default function Menu(){

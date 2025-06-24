@@ -1,4 +1,4 @@
-import Body from '../body';
+import Body from '../Body';
 import styles from './Tables.module.css';
 
 const tablesConfig = {

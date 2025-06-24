@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Bill.module.css';
 
-import Body from '../body';
+import Body from '../Body';
 import BillHead from './BillHead';
 import BillItems from './BillItems';
 import ConfirmBtn from './Summary';
