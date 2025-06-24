@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Orders.module.css';
 
 import Body from '../Body';
@@ -7,19 +7,22 @@ import OrderItem from './OrderItem';
 import ConfirmBox from './ConfirmBox';
 
 export default function Orders() {
-  const [orders, setOrders] = useState([
-    {
-      tableNum: 1,
-      timeStamp: '1 min ago',
-      items: [
-        { name: 'Keema Noodles', qty: 2 },
-        { name: 'Strawberry Ice-cream', qty: 1 },
-        { name: 'Blueberry Muffin', qty: 2 },
-      ],
-    }
-  ]);
-
+  const [orders, setOrders] = useState([]);
   const [confirmingIndex, setConfirmingIndex] = useState(null);
+
+  useEffect(() => {
+  fetch('/api/getOrder')
+    .then((res) => res.json())
+    .then((data) => {
+      if (Array.isArray(data)) {
+        setOrders(data);
+      } else {
+        setOrders([data]); // fallback for single order
+      }
+    })
+    .catch((error) => console.error('Error fetching orders:', error));
+}, []);
+
 
   const handleCancelClick = (index) => {
     setConfirmingIndex(index);
@@ -41,7 +44,7 @@ export default function Orders() {
         {orders.map((order, index) => (
           <div key={index} className={styles.orderCard}>
             <div className={styles.orderTitle}>
-              <span className={styles.tableNum}>Table : {order.tableNum}</span>
+              <span className={styles.tableNum}>Table : {order.table}</span>
               <span className={styles.timeStamp}>{order.timeStamp}</span>
             </div>
 

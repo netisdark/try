@@ -1,6 +1,7 @@
 import styles from './Order.module.css';
 import { useCart } from '../cart/CartContext';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function Order() {
   const {
@@ -12,10 +13,15 @@ export default function Order() {
     placeOrder,
     lastPlacedItems
   } = useCart();
-
+  const location = useLocation();
+  const table = new URLSearchParams(location.search).get('table');
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState(null);
+  const [isTable, setIsTable] = useState(false);
 
+  if(table){
+    setIsTable(true);
+  }
   const cartEntries = Object.entries(cartItems);
   const total = cartEntries.reduce((sum, [key, count]) => {
     const item = getItemDetails(key);
@@ -35,7 +41,8 @@ export default function Order() {
             name: item.name,
             price: item.price,
             quantity: count,
-            subtotal: item.price * count
+            table: table,
+            subtotal: item.price * count,
           };
         }),
         total: total,
@@ -83,7 +90,7 @@ export default function Order() {
 
   return (
     <div className={styles.orderContainer}>
-      <div className={styles.orderTitle}>My Order</div>
+      <div className={styles.orderTitle}>My Order || Table : {table}</div>
       
       {notification && (
         <div className={`${styles.notification} ${styles[notification.type]}`}>
@@ -125,7 +132,7 @@ export default function Order() {
           })
         )}
       </div>
-      {cartEntries.length > 0 && (
+      {(cartEntries.length > 0 && isTable) && (
         <div className={styles.confirmCont}>
           <div className={styles.priceCont}>Total : RS {total}</div>
           <button 
