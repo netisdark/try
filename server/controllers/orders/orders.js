@@ -1,4 +1,4 @@
-import { getDB } from '../config/db.js';
+import { getDB } from '../../config/db.js';
 
 export const postOrder = async (req, res) => {
   try {

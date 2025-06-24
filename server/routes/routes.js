@@ -1,15 +1,14 @@
 import express from 'express';
-import {login, register, account} from '../member/account.js';
-import {getOrder, postOrder} from '../admin/orders.js';
+import {login, register, account} from '..controllers/auth/account.js';
+import {getOrder, postOrder} from '../controllers/orders/orders.js';
 const router = express.Router();
 
-// member routes
+
 router.post('/auth/login', login);
 router.post('/auth/register', register);
 
 router.get('/account', account);
 
-// admin routes
 router.post('/postOrder', postOrder);
 router.get('/getOrder', getOrder);
 
