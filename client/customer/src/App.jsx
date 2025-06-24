@@ -6,7 +6,6 @@ import Order from './components/order/Order';
 import Bill from './components/bill/Bill';
 import History from './components/history/History';
 import Account from './components/account/Account';
-import Dashboard from './components/dashboard/dashboard';
 import GetOrder from './components/order/order.admin';
 import './index.css';
 export default function App() {
@@ -14,13 +13,12 @@ export default function App() {
   <BrowserRouter>
     <CartProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="order" element={<Order />} />
-          <Route path="bill" element={<Bill />} />
-          <Route path="history" element={<History />} />
-          <Route path="account" element={<Account />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="/bill" element={<Bill />} />
+          <Route path="customer/" element={<Home />} />
+          <Route path="/customer/order" element={<Order />} />
+          <Route path="/customer/bill" element={<Bill />} />
+          <Route path="/customer/history" element={<History />} />
+          <Route path="/customer/account" element={<Account />} />
+          <Route path="/customer/bill" element={<Bill />} />
           <Route path="admin/orders" element={<GetOrder />} />
         </Routes>
         <Footer />

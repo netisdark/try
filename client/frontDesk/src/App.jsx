@@ -17,11 +17,11 @@ export default function FrontdeskApp() {
       }}>
     <Nav/>
       <Routes>
-        <Route path="/" element={<Tables/>} />
-        <Route path="/orders" element={<Orders/>} />
-        <Route path="/bill" element={<Bill/>} />
-        <Route path="/menu" element={<Menu/>} />
-        <Route path="/payments" element={<Payments/>} />
+        <Route path="/frontdesk/tables" element={<Tables/>} />
+        <Route path="/frontdesk/orders" element={<Orders/>} />
+        <Route path="/frontdesk/bill" element={<Bill/>} />
+        <Route path="/frontdesk/menu" element={<Menu/>} />
+        <Route path="/frontdesk/payments" element={<Payments/>} />
       </Routes>
     </div>
   </BrowserRouter>

@@ -12,10 +12,10 @@ export default function AdvertApp() {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/menu' element={<Menu />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/advert/' element={<Home />} />
+        <Route path='/advert/menu' element={<Menu />} />
+        <Route path='/advert/about' element={<About />} />
+        <Route path='/advert/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>

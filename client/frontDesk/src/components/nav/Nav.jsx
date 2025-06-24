@@ -8,7 +8,7 @@ export default function Nav() {
 
             <div className={styles.navLinksCont}>
                 <NavLink
-                    to='/'
+                    to='/frontdesk/tables'
                     className={({ isActive }) =>
                         isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                     }
@@ -18,7 +18,7 @@ export default function Nav() {
                 </NavLink>
 
                 <NavLink
-                    to='/orders'
+                    to='/frontdesk/orders'
                     className={({ isActive }) =>
                         isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                     }
@@ -28,7 +28,7 @@ export default function Nav() {
                 </NavLink>
 
                 <NavLink
-                    to='/bill'
+                    to='/frontdesk/bill'
                     className={({ isActive }) =>
                         isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                     }
@@ -38,7 +38,7 @@ export default function Nav() {
                 </NavLink>
 
                 <NavLink
-                    to='/menu'
+                    to='/frontdesk/menu'
                     className={({ isActive }) =>
                         isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                     }
@@ -48,7 +48,7 @@ export default function Nav() {
                 </NavLink>
 
                 <NavLink
-                    to='/payments'
+                    to='/frontdesk/payments'
                     className={({ isActive }) =>
                         isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                     }

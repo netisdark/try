@@ -1,4 +1,4 @@
-import { getDB } from "../config/db.js";
+import { getDB } from "../../config/db.js";
 import bcrypt from 'bcrypt';
 
 export const register = async (req, res) => {
@@ -20,10 +20,11 @@ export const register = async (req, res) => {
     }
 
     const hash = await bcrypt.hash(password, 10);
-
+    const role = 'customer';
     const result = await db.collection('users').insertOne({
       email,
       name,
+      role,
       password: hash,
       date: new Date(),
     });
@@ -31,6 +32,7 @@ export const register = async (req, res) => {
     req.session.user = {
       email,
       name,
+      role,
       _id: result.insertedId
     };
 

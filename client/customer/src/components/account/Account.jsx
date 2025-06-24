@@ -28,7 +28,8 @@ export default function Account() {
         setEmail('');
         setName('');
         setPassword('');
-        location.href="/dashboard";
+        alert(response.role);
+        location.href="/" + result.role;
       } else {
         alert(result.message || 'Something went wrong.');
       }

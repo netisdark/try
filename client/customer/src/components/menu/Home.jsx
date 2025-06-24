@@ -4,6 +4,7 @@ import SearchBox from './SearchBox';
 import { useState } from 'react';
 
 export default function Home() {
+  
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
