@@ -13,26 +13,53 @@ export default function Orders() {
   useEffect(() => {
   fetch('/api/getOrder')
     .then((res) => res.json())
-    .then((data) => {
-      if (Array.isArray(data)) {
-        setOrders(data);
-      } else {
-        setOrders([data]); // fallback for single order
-      }
+    .then((resData) => {
+      const ordersArray = resData.data || [];
+
+      const normalizeOrder = (order) => ({
+        table: order.items?.[0]?.table || 'Unknown',
+        timeStamp: new Date(order.timestamp).toLocaleString(),
+        items: order.items || [],
+        total: order.total || 0,
+        status: order.status || 'unknown',
+        orderId: order.orderId || ''
+      });
+
+      const normalizedOrders = ordersArray.map(normalizeOrder);
+      setOrders(normalizedOrders);
     })
     .catch((error) => console.error('Error fetching orders:', error));
 }, []);
+
 
 
   const handleCancelClick = (index) => {
     setConfirmingIndex(index);
   };
 
-  const handleConfirm = (index) => {
+const handleConfirm = async (index) => {
+  try {
+    const orderToDelete = orders[index];
+    console.log(orderToDelete.orderId);
+    const response = await fetch('/api/removeOrder', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ orderId: orderToDelete.orderId }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to delete order');
+    }
+
     const newOrders = orders.filter((_, i) => i !== index);
     setOrders(newOrders);
     setConfirmingIndex(null);
-  };
+  } catch (error) {
+    console.error('Error deleting order:', error);
+  }
+};
 
   const handleCancelConfirm = () => {
     setConfirmingIndex(null);

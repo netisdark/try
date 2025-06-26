@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './MenuControls.module.css';
-import MenuItems from './MenuItems'; 
+import MenuItems from './MenuItemsData'; 
 
 export default function MenuControls() {
     const [showDropdown, setShowDropdown] = useState(false);

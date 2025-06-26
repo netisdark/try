@@ -19,7 +19,7 @@ export default function Menu(){
                     <div className={styles.itemTitle}>Available</div>
                     <div className={styles.itemTitle}>Edit Item</div>
                 </div>
-                <MenuItems/>
+                <MenuItems />
             </div>
         </Body>
         )

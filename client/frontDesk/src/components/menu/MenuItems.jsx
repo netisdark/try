@@ -1,6 +1,6 @@
 import styles from './MenuItems.module.css';
-import OrderSwitch from '../OrderSwitch';
-import menuItems from './menuItems';
+import OrderSwitch from '../OrderSwitch.jsx';
+import menuItems from './MenuItemsData.js';
 
 export default function MenuItems() {
     let itemIndex = 0;
@@ -23,8 +23,8 @@ export default function MenuItems() {
                             <div className={styles.itemDetl}><OrderSwitch /></div>
                             <div className={styles.itemDetl}>
                                 <div className={styles.editBtnCont}>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                <i class="fa-solid fa-trash"></i>
+                                <i className="fa-solid fa-pen-to-square"></i>
+                                <i className="fa-solid fa-trash"></i>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 import styles from './Order.module.css';
 import { useCart } from '../cart/CartContext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function Order() {
@@ -19,9 +19,11 @@ export default function Order() {
   const [notification, setNotification] = useState(null);
   const [isTable, setIsTable] = useState(false);
 
-  if(table){
-    setIsTable(true);
-  }
+  useEffect(() => {
+    if (table) {
+      setIsTable(true);
+    }
+  }, [table]);
   const cartEntries = Object.entries(cartItems);
   const total = cartEntries.reduce((sum, [key, count]) => {
     const item = getItemDetails(key);

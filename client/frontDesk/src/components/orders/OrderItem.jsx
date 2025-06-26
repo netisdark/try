@@ -6,7 +6,7 @@ export default function OrderItem({ items }) {
       {items.map((item, index) => (
         <ul key={index} className={styles.item}>
           <li className={styles.itemName}>{item.name}</li>
-          <li className={styles.itemQty}>{item.qty}</li>
+          <li className={styles.itemQty}>{item.quantity}</li>
         </ul>
       ))}
     </div>
