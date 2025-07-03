@@ -54,8 +54,13 @@ app.get(/^\/advert(\/.*)?$/, (req, res) => {
 app.use('/api', router);
 
 const startServer = async () => {
-  await connectToMongoDB();
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  try {
+    await connectToMongoDB();
+    app.listen(5000, () => console.log("Server running on http://localhost:5000"));
+  } catch (err) {
+    console.error("Failed to connect to DB", err);
+    process.exit(1);
+  }
 };
 
 startServer();
