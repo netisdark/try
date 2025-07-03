@@ -1,7 +1,7 @@
 import express from 'express';
 import {login, register, account} from '../controllers/auth/account.js';
 import {getOrder, postOrder, removeOrder} from '../controllers/orders/orders.js';
-import { getMenu } from '../controllers/menu/menu.js';
+import { getMenu, postMenu } from '../controllers/menu/menu.js';
 const router = express.Router();
 
 
@@ -15,4 +15,5 @@ router.get('/getOrder', getOrder);
 router.post('/removeOrder', removeOrder);
 
 router.get('/getMenu', getMenu);
+router.post('/postMenu', postMenu);
 export default router;

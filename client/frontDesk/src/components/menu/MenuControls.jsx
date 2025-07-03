@@ -1,11 +1,42 @@
 import React, { useState } from 'react';
 import styles from './MenuControls.module.css';
-import MenuItems from './MenuItemsData'; 
+import MenuItems from './MenuItemsData';
+import AddMenuModal from './AddMenuModal';
 
 export default function MenuControls() {
     const [showDropdown, setShowDropdown] = useState(false);
-    
+    const [menuItems, setMenuItems] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
     const categories = MenuItems.map(item => item.category);
+
+
+     const handleAddItem = async ({ category, item }) => {
+    try {
+      const res = await fetch('/api/postMenu', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ category, item }),
+      });
+
+      if (!res.ok) throw new Error('Failed to add item');
+
+      const updatedCategory = await res.json();
+
+      setMenuItems(prevMenu => {
+        const exists = prevMenu.find(c => c.category === category);
+        if (exists) {
+          return prevMenu.map(c =>
+            c.category === category ? updatedCategory.menuCategory : c
+          );
+        }
+        return prevMenu;
+      });
+
+      setModalOpen(false);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
 
     return (
         <div className={styles.menuControls}>
@@ -39,10 +70,15 @@ export default function MenuControls() {
                     </ul>
                 )}
 
-                <button className={styles.addItemBtn}>
+                <button className={styles.addItemBtn} onClick={() => setModalOpen(true)}>
                     <i className="fa-solid fa-plus"></i>
                     Add New Item
                 </button>
+                <AddMenuModal
+                    isOpen={modalOpen}
+                    onClose={() => setModalOpen(false)}
+                    onAdd={handleAddItem}
+                />
             </div>
         </div>
     );
