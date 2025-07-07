@@ -1,0 +1,16 @@
+.salesChartContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.chartWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chartTitle{
+    font-weight: 500;
+    width: 100%;
+    padding: 4.6vh 0vh;
+}
