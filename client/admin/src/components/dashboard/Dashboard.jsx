@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Dashboard.module.css';
-import Body from '../body';
+import Body from '../Body';
 import DashboardLeft from './dsbLeft/DashboardLeft';
 import DashboardRight from './dsbRight/DashboardRight';
 
