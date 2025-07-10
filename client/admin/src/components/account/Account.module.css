@@ -1,0 +1,52 @@
+.accountsWrap{
+    height: 100vh;
+    width: 100%;
+}
+.accountsWrap,
+.accountBox,
+.profileCont,
+.profileDataCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+.profileCont,.profileDataCont{
+    width: 60vh;
+}
+.profileImg{
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+}
+input{
+    width: 25vh;
+    border-bottom: 1px solid grey;
+    padding: 1vh;
+}
+.passwordCont{
+    display: flex;
+    align-items: center;
+    padding-left: 5vh;
+    gap: 2vh;
+}
+.buttonsCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    margin-top: 5vh;
+}
+button{
+    width: 20vh;
+    height: 5vh;
+    padding: 0vh 2vh;
+    border-radius: 1vh;
+    background-color: var(--colorPrim);
+    color: #fff;
+    cursor: pointer;
+}
+button:nth-child(2){
+    background-color: rgb(43, 184, 0);
+}

@@ -1,6 +1,6 @@
 import express from 'express';
 import {login, register, account} from '../controllers/auth/account.js';
-import {getOrder, postOrder, removeOrder} from '../controllers/orders/orders.js';
+import {getOrder, postOrder, removeOrder, getDashboardData} from '../controllers/orders/orders.js';
 import { getMenu, postMenu } from '../controllers/menu/menu.js';
 const router = express.Router();
 
@@ -16,4 +16,5 @@ router.post('/removeOrder', removeOrder);
 
 router.get('/getMenu', getMenu);
 router.post('/postMenu', postMenu);
+router.post('/getDashboardData', getDashboardData);
 export default router;
