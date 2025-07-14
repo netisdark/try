@@ -10,8 +10,9 @@ import styles from './DashboardRight.module.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DonutChart = ({ items }) => {
-  const sorted = [...items].sort((a, b) => b.sales - a.sales);
+const DonutChart = ({ items = [] }) => {
+  const safeItems = Array.isArray(items) ? items : [];
+  const sorted = [...safeItems].sort((a, b) => b.sales - a.sales);
   const top3 = sorted.slice(0, 3);
   const othersTotal = sorted.slice(3).reduce((sum, item) => sum + item.sales, 0);
 

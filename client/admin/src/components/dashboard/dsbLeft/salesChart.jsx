@@ -25,27 +25,57 @@ ChartJS.register(
   Filler
 );
 
-// Function to generate fake hourly sales between 8 AM and 10 PM
-const generateSalesData = (date) => {
-  const sales = [];
+// Fetch today's hourly sales data from the API
+const fetchTodaySalesData = async () => {
+  const response = await fetch('/api/getTodaySalesData');
+  if (!response.ok) {
+    throw new Error('Failed to fetch sales data');
+  }
+  const data = await response.json();
+  // data.data is an array of order objects with createdAt and total
+  // We want to aggregate sales per hour for today
+  if (!Array.isArray(data.data)) return [];
+
+  // Group sales by hour
+  const salesByHour = {};
+  data.data.forEach(order => {
+    const date = new Date(order.createdAt);
+    // Get hour in 24h format
+    const hour = date.getHours();
+    // Use hour as key, sum totals
+    if (!salesByHour[hour]) {
+      salesByHour[hour] = 0;
+    }
+    salesByHour[hour] += order.total || 0;
+  });
+
+  // For display, show from 8:00 to 22:00
+  const result = [];
   for (let hour = 8; hour <= 22; hour++) {
-    const time = new Date(date);
-    time.setHours(hour, 0, 0, 0);
-    sales.push({
+    // Create a Date object for today at this hour
+    const now = new Date();
+    const time = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      hour,
+      0,
+      0,
+      0
+    );
+    result.push({
       time,
-      sales: Math.floor(Math.random() * 100),
+      sales: salesByHour[hour] || 0,
     });
   }
-  return sales;
+  return result;
 };
 
 const SalesChart = () => {
   const [salesData, setSalesData] = useState([]);
 
   useEffect(() => {
-    const today = new Date();
-    const data = generateSalesData(today);
-    setSalesData(data);
+    fetchTodaySalesData().then(setSalesData);
   }, []);
 
   const chartData = {
