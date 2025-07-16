@@ -95,7 +95,7 @@ const handleDateRangeChange = (event) => {
                 </div>
             </div>
 
-            <SalesChart />
+            <SalesChart dateRange={dateRange} />
         </div>
     );
 }

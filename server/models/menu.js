@@ -3,7 +3,14 @@ import mongoose from "mongoose";
 const itemSchema = new mongoose.Schema({
   name: String,
   price: Number,
-  img: String,
+  img: String, // image URL/path
+  imgFile: {
+    filename: String,
+    path: String,
+    mimetype: String,
+    size: Number,
+  },
+  available: { type: Boolean, default: true }, // availability flag
 });
 
 const categorySchema = new mongoose.Schema({

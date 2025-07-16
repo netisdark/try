@@ -25,24 +25,28 @@ ChartJS.register(
   Filler
 );
 
-// Fetch today's hourly sales data from the API
-const fetchTodaySalesData = async () => {
-  const response = await fetch('/api/getTodaySalesData');
+// Fetch sales data for a given range from the API
+const fetchSalesData = async (range) => {
+  const response = await fetch('/api/getSalesData', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ range }),
+  });
   if (!response.ok) {
     throw new Error('Failed to fetch sales data');
   }
   const data = await response.json();
+  console.log(data);
   // data.data is an array of order objects with createdAt and total
-  // We want to aggregate sales per hour for today
   if (!Array.isArray(data.data)) return [];
 
   // Group sales by hour
   const salesByHour = {};
   data.data.forEach(order => {
     const date = new Date(order.createdAt);
-    // Get hour in 24h format
     const hour = date.getHours();
-    // Use hour as key, sum totals
     if (!salesByHour[hour]) {
       salesByHour[hour] = 0;
     }
@@ -52,16 +56,12 @@ const fetchTodaySalesData = async () => {
   // For display, show from 8:00 to 22:00
   const result = [];
   for (let hour = 8; hour <= 22; hour++) {
-    // Create a Date object for today at this hour
     const now = new Date();
     const time = new Date(
       now.getFullYear(),
       now.getMonth(),
       now.getDate(),
-      hour,
-      0,
-      0,
-      0
+      hour, 0, 0, 0
     );
     result.push({
       time,
@@ -71,12 +71,12 @@ const fetchTodaySalesData = async () => {
   return result;
 };
 
-const SalesChart = () => {
+const SalesChart = ({ dateRange = 'today' }) => {
   const [salesData, setSalesData] = useState([]);
 
   useEffect(() => {
-    fetchTodaySalesData().then(setSalesData);
-  }, []);
+    fetchSalesData(dateRange).then(setSalesData);
+  }, [dateRange]);
 
   const chartData = {
     labels: salesData.map((d) => d.time),

@@ -1,6 +1,7 @@
 {
   "name": "cafe-management",
   "private": true,
+  "proxy": "http://localhost:5000",
   "workspaces": [
     "client/*"
   ],

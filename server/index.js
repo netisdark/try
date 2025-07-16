@@ -49,6 +49,7 @@ app.get(/^\/advert(\/.*)?$/, (req, res) => {
   res.sendFile(path.join(__dirname, '../client/cafeAdvert/dist/index.html'));
 });
 
+app.use('/uploads', express.static(path.resolve('uploads')));
 
 
 app.use('/api', router);

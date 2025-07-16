@@ -7,7 +7,20 @@ export default function AddMenuModal({ isOpen, onClose, onAdd }) {
   const [price, setPrice] = useState('');
   const [img, setImg] = useState('');
 
-  const handleSubmit = (e) => {
+  const categoryOptions = [
+    'Coffee',
+    'Tea',
+    'Pastries',
+    'Sandwiches',
+    'Breakfast',
+    'Desserts',
+    'Smoothies',
+    'Specials',
+  ];
+
+  const safeCategoryOptions = Array.isArray(categoryOptions) ? categoryOptions : [];
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!category || !name || !price) {
@@ -15,11 +28,56 @@ export default function AddMenuModal({ isOpen, onClose, onAdd }) {
       return;
     }
 
-    onAdd({ category, item: { name, price: Number(price), img } });
-    setCategory('');
-    setName('');
-    setPrice('');
-    setImg('');
+    try {
+      const response = await fetch('/api/postMenu', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          category,
+          item: { name, price: Number(price), img }
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to add menu item');
+      }
+
+      // Only call onAdd if you are NOT refetching the menu in the parent
+      if (onAdd) {
+        onAdd(); // Just trigger a refetch in the parent, don't pass the item
+      }
+
+      setCategory('');
+      setName('');
+      setPrice('');
+      setImg('');
+      onClose(); // Optionally close the modal after add
+    } catch (err) {
+      alert(err.message || 'Error adding menu item');
+    }
+  };
+
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Upload the file to the backend
+      const formData = new FormData();
+      formData.append('image', file);
+      const res = await fetch('/api/uploadMenuImage', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success && data.url) {
+        setImg(data.url);
+      } else {
+        alert('Image upload failed');
+      }
+    }
   };
 
   if (!isOpen) return null;
@@ -31,13 +89,16 @@ export default function AddMenuModal({ isOpen, onClose, onAdd }) {
         <form onSubmit={handleSubmit} className={styles.form}>
           <label>
             Category:
-            <input
-              type="text"
+            <select
               value={category}
               onChange={e => setCategory(e.target.value)}
-              placeholder="e.g. Coffee"
               required
-            />
+            >
+              <option value="" disabled>Select category</option>
+              {safeCategoryOptions.length > 0 && safeCategoryOptions.map(opt => (
+                <option key={opt} value={opt}>{opt}</option>
+              ))}
+            </select>
           </label>
           <label>
             Item Name:
@@ -61,12 +122,12 @@ export default function AddMenuModal({ isOpen, onClose, onAdd }) {
             />
           </label>
           <label>
-            Image URL:
+            Image:
             <input
-              type="url"
-              value={img}
-              onChange={e => setImg(e.target.value)}
-              placeholder="Optional image URL"
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              style={{ marginTop: '8px' }}
             />
           </label>
 

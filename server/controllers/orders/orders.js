@@ -8,7 +8,7 @@ import { getDashboardData } from './getDashboardData.js';
 import { getPeakHours } from './getPeakHours.js';
 import { getThreePeakHours } from './getThreePeakHours.js';
 import { getTopSellingItems } from './getTopSellingItems.js';
-import { getTodaySalesData } from './getTodaySalesData.js';
+import { getSalesData } from './getSalesData.js';
 
 export {
   postOrder,
@@ -20,5 +20,5 @@ export {
   getPeakHours,
   getThreePeakHours,
   getTopSellingItems,
-  getTodaySalesData
+  getSalesData
 };

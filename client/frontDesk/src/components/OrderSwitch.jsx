@@ -1,9 +1,9 @@
 import styles from './OrderSwitch.module.css';
 
-export default function Switch() {
+export default function OrderSwitch({ checked = false, onChange }) {
   return (
     <label className={styles.switch}>
-      <input type="checkbox" defaultChecked />
+      <input type="checkbox" checked={checked} onChange={onChange} />
       <div className={styles.slider}>
         <div className={styles.circle}>
           <svg

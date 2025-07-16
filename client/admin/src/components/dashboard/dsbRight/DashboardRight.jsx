@@ -8,7 +8,7 @@ export default function DashboardRight() {
   const fetchTopSellingItems = async () => {
     const response = await fetch('/api/getTopSellingItems');
     const data = await response.json();
-    return data;
+    return data.data;
   };
 
   const [topSellingItems, setTopSellingItems] = useState([]);
